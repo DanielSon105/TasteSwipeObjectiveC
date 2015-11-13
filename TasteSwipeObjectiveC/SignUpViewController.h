@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SignUpViewController.h
 //  TasteSwipeObjectiveC
 //
 //  Created by Daniel Barrido on 11/10/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface SignUpViewController : UIViewController
 
 @end
-

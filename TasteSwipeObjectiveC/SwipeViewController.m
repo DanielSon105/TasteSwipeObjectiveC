@@ -7,6 +7,7 @@
 //
 
 #import "SwipeViewController.h"
+#import "SwipedCardBackgroundView.h"
 
 @interface SwipeViewController ()
 
@@ -14,24 +15,13 @@
 
 @implementation SwipeViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    SwipedCardBackgroundView *swipedCardBackgroundView = [[SwipedCardBackgroundView alloc]initWithFrame:self.view.frame];
+    [swipedCardBackgroundView getMealInfo:self.user.token];
+    [self.view addSubview:swipedCardBackgroundView];
+    NSLog(@"SwipedCardBackgroundView alloc init complete");
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

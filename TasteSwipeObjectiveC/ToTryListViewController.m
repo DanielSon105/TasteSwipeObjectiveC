@@ -7,8 +7,18 @@
 //
 
 #import "ToTryListViewController.h"
+#import "MealDetailViewController.h"
 
-@interface ToTryListViewController ()
+@interface ToTryListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property NSMutableArray *toTryListMeals;
+@property NSDictionary *getMealDictionaryJSON;
+@property NSMutableDictionary *arrayOfToTryMealDictionaries;
+@property User *user;
+@property NSString *temptoken;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property Meal *selectedMeal;
 
 @end
 
@@ -16,22 +26,112 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    self.temptoken = @"jBDN0mkWbvHLUKqqRA6v";
+//    self.toTryListMeals = [NSMutableArray new];
+
+    if (self.toTryListMeals == nil){
+        self.toTryListMeals = [NSMutableArray new];
+        self.getMealDictionaryJSON = [NSDictionary new];
+        self.temptoken = @"jBDN0mkWbvHLUKqqRA6v";
+        [self getToTryListMeals:self.temptoken];
+    }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+
+
+-(void)getToTryListMeals:(NSString *)token
+{
+    NSURLSessionConfiguration *sessionConfig =
+    [NSURLSessionConfiguration defaultSessionConfiguration];
+
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+
+    NSURL *url = [NSURL URLWithString:@"http://tasteswipe-int.herokuapp.com/try_meals"];
+
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"; charset=utf-8", token] forHTTPHeaderField:@"Authorization"];
+
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+
+        if (error != nil) {
+            NSLog(@"---> ERROR :: %@", error);
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.user = [User new];
+            self.user.token = token; //THIS IS JUST HERE UNTIL I FIND A BETTER WAY TO GO ABOUT MANAGING THE TOKEN STUFF.
+
+            self.getMealDictionaryJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            self.arrayOfToTryMealDictionaries = [self.getMealDictionaryJSON objectForKey:@"try_meals"];
+            NSLog(@"Array of To Try Meal Dictionaries --> %@",self.arrayOfToTryMealDictionaries);
+            self.toTryListMeals = [NSMutableArray new];
+            for (NSDictionary *dict in self.arrayOfToTryMealDictionaries) {
+                Meal *meal = [[Meal alloc] initMealWithContentsOfDictionary:dict];
+                [self.toTryListMeals addObject:meal];
+                NSLog(@"The meal added to To Try List Meals is --> %@", meal);
+            }
+            [self.tableView reloadData];
+
+        });
+    }];
+    [task resume];
 }
 
-/*
-#pragma mark - Navigation
+-(void)markMealAsTried{
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
+
+
+
+
+#pragma mark - Tableview Delegates
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.toTryListMeals.count;
+}
+
+-(ToTryListTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ToTryListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToTryListCell" forIndexPath:indexPath];
+    cell.toTryListMeal = [self.toTryListMeals objectAtIndex:indexPath.row];
+    cell.textLabel.text = cell.toTryListMeal.mealName;
+    cell.imageView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:cell.toTryListMeal.mealImageURL]]];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+
+    
+    [self performSegueWithIdentifier: @"TryToMealDetailSegue" sender:self];
+    //go to meal detail view
+}
+
+#pragma mark - Prepare For Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqual: @"TryToMealDetailSegue"]) {
+        MealDetailViewController *mdvc = segue.destinationViewController;
+
+        mdvc.meal = self.selectedMeal;
+    }
+}
+
+
+//-(void)save {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
+//    [self.toTryListMeals writeToURL:pList atomically:YES];
+//    NSLog(@"%@", pList);
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:[NSDate date] forKey:@"LastWriteDate"];
+//}
+//
+//-(void)load {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
+//    self.toTryListMeals = [NSMutableArray arrayWithContentsOfURL:pList];
+//}
+
 
 @end

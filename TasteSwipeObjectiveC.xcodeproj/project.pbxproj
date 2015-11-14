@@ -9,13 +9,27 @@
 /* Begin PBXBuildFile section */
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
 		E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286521BF2CF42002A9C0C /* AppDelegate.m */; };
-		E0E286561BF2CF42002A9C0C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286551BF2CF42002A9C0C /* ViewController.m */; };
 		E0E286591BF2CF42002A9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E286571BF2CF42002A9C0C /* Main.storyboard */; };
 		E0E2865C1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0E2865A1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld */; };
 		E0E2865E1BF2CF42002A9C0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0E2865D1BF2CF42002A9C0C /* Assets.xcassets */; };
 		E0E286611BF2CF42002A9C0C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E2865F1BF2CF42002A9C0C /* LaunchScreen.storyboard */; };
 		E0E2866C1BF2CF42002A9C0C /* TasteSwipeObjectiveCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2866B1BF2CF42002A9C0C /* TasteSwipeObjectiveCTests.m */; };
 		E0E286771BF2CF42002A9C0C /* TasteSwipeObjectiveCUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286761BF2CF42002A9C0C /* TasteSwipeObjectiveCUITests.m */; };
+		E0E286861BF2CF7D002A9C0C /* Meal.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286851BF2CF7D002A9C0C /* Meal.m */; };
+		E0E286891BF2CF8C002A9C0C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286881BF2CF8C002A9C0C /* User.m */; };
+		E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2868C1BF2CFFB002A9C0C /* SwipeViewController.m */; };
+		E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286901BF2D04C002A9C0C /* WelcomeViewController.m */; };
+		E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286931BF2D071002A9C0C /* SignUpViewController.m */; };
+		E0E286971BF2D096002A9C0C /* ToTryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286961BF2D096002A9C0C /* ToTryListViewController.m */; };
+		E0E2869A1BF2E033002A9C0C /* SwipedCardBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286991BF2E033002A9C0C /* SwipedCardBackgroundView.m */; };
+		E0E2869D1BF2E05C002A9C0C /* SwipedCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2869C1BF2E05C002A9C0C /* SwipedCardView.m */; };
+		E0E286A01BF2E06F002A9C0C /* OverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2869F1BF2E06F002A9C0C /* OverlayView.m */; };
+		E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286A51BF3CB19002A9C0C /* GroceryListViewController.m */; };
+		E0E286AA1BF3CB6A002A9C0C /* MealDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286A91BF3CB6A002A9C0C /* MealDetailViewController.m */; };
+		E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286AD1BF3CCA7002A9C0C /* RecipeViewController.m */; };
+		E0E286B21BF5014D002A9C0C /* ToTryListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286B11BF5014D002A9C0C /* ToTryListTableViewCell.m */; };
+		E0E286B91BF654B2002A9C0C /* ConsumableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */; };
+		E0E286BC1BF655DF002A9C0C /* Consumable.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286BB1BF655DF002A9C0C /* Consumable.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +54,6 @@
 		E0E2864F1BF2CF42002A9C0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0E286511BF2CF42002A9C0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E0E286521BF2CF42002A9C0C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E0E286541BF2CF42002A9C0C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		E0E286551BF2CF42002A9C0C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E0E286581BF2CF42002A9C0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E0E2865B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TasteSwipeObjectiveC.xcdatamodel; sourceTree = "<group>"; };
 		E0E2865D1BF2CF42002A9C0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +65,36 @@
 		E0E286721BF2CF42002A9C0C /* TasteSwipeObjectiveCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TasteSwipeObjectiveCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E286761BF2CF42002A9C0C /* TasteSwipeObjectiveCUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TasteSwipeObjectiveCUITests.m; sourceTree = "<group>"; };
 		E0E286781BF2CF42002A9C0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E0E286841BF2CF7D002A9C0C /* Meal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Meal.h; path = ../Meal.h; sourceTree = "<group>"; };
+		E0E286851BF2CF7D002A9C0C /* Meal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Meal.m; path = ../Meal.m; sourceTree = "<group>"; };
+		E0E286871BF2CF8C002A9C0C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
+		E0E286881BF2CF8C002A9C0C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		E0E2868B1BF2CFFB002A9C0C /* SwipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		E0E2868C1BF2CFFB002A9C0C /* SwipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		E0E2868F1BF2D04C002A9C0C /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		E0E286901BF2D04C002A9C0C /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		E0E286921BF2D071002A9C0C /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		E0E286931BF2D071002A9C0C /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		E0E286951BF2D096002A9C0C /* ToTryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToTryListViewController.h; sourceTree = "<group>"; };
+		E0E286961BF2D096002A9C0C /* ToTryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToTryListViewController.m; sourceTree = "<group>"; };
+		E0E286981BF2E033002A9C0C /* SwipedCardBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipedCardBackgroundView.h; path = ../SwipedCardBackgroundView.h; sourceTree = "<group>"; };
+		E0E286991BF2E033002A9C0C /* SwipedCardBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipedCardBackgroundView.m; path = ../SwipedCardBackgroundView.m; sourceTree = "<group>"; };
+		E0E2869B1BF2E05C002A9C0C /* SwipedCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwipedCardView.h; path = ../SwipedCardView.h; sourceTree = "<group>"; };
+		E0E2869C1BF2E05C002A9C0C /* SwipedCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwipedCardView.m; path = ../SwipedCardView.m; sourceTree = "<group>"; };
+		E0E2869E1BF2E06F002A9C0C /* OverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OverlayView.h; path = ../OverlayView.h; sourceTree = "<group>"; };
+		E0E2869F1BF2E06F002A9C0C /* OverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OverlayView.m; path = ../OverlayView.m; sourceTree = "<group>"; };
+		E0E286A41BF3CB19002A9C0C /* GroceryListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListViewController.h; sourceTree = "<group>"; };
+		E0E286A51BF3CB19002A9C0C /* GroceryListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListViewController.m; sourceTree = "<group>"; };
+		E0E286A81BF3CB6A002A9C0C /* MealDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealDetailViewController.h; sourceTree = "<group>"; };
+		E0E286A91BF3CB6A002A9C0C /* MealDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealDetailViewController.m; sourceTree = "<group>"; };
+		E0E286AC1BF3CCA7002A9C0C /* RecipeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeViewController.h; sourceTree = "<group>"; };
+		E0E286AD1BF3CCA7002A9C0C /* RecipeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeViewController.m; sourceTree = "<group>"; };
+		E0E286B01BF5014D002A9C0C /* ToTryListTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToTryListTableViewCell.h; sourceTree = "<group>"; };
+		E0E286B11BF5014D002A9C0C /* ToTryListTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToTryListTableViewCell.m; sourceTree = "<group>"; };
+		E0E286B71BF654B2002A9C0C /* ConsumableTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumableTableViewCell.h; sourceTree = "<group>"; };
+		E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumableTableViewCell.m; sourceTree = "<group>"; };
+		E0E286BA1BF655DF002A9C0C /* Consumable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consumable.h; sourceTree = "<group>"; };
+		E0E286BB1BF655DF002A9C0C /* Consumable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consumable.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,13 +147,18 @@
 			children = (
 				E0E286511BF2CF42002A9C0C /* AppDelegate.h */,
 				E0E286521BF2CF42002A9C0C /* AppDelegate.m */,
-				E0E286541BF2CF42002A9C0C /* ViewController.h */,
-				E0E286551BF2CF42002A9C0C /* ViewController.m */,
+				E0E2868A1BF2CFCE002A9C0C /* Models */,
+				E0E286A21BF3C360002A9C0C /* Login */,
+				E0E286A31BF3C37A002A9C0C /* SwipeVC */,
 				E0E286571BF2CF42002A9C0C /* Main.storyboard */,
 				E0E2865D1BF2CF42002A9C0C /* Assets.xcassets */,
 				E0E2865F1BF2CF42002A9C0C /* LaunchScreen.storyboard */,
 				E0E286621BF2CF42002A9C0C /* Info.plist */,
 				E0E2865A1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld */,
+				E0E2868E1BF2D027002A9C0C /* ToTryListVC */,
+				E0E286AB1BF3CB70002A9C0C /* MealDetailVC */,
+				E0E286A71BF3CB2B002A9C0C /* GroceryListVC */,
+				E0E286AF1BF3CCAE002A9C0C /* RecipeVC */,
 				E0E2864E1BF2CF42002A9C0C /* Supporting Files */,
 			);
 			path = TasteSwipeObjectiveC;
@@ -141,6 +188,86 @@
 				E0E286781BF2CF42002A9C0C /* Info.plist */,
 			);
 			path = TasteSwipeObjectiveCUITests;
+			sourceTree = "<group>";
+		};
+		E0E2868A1BF2CFCE002A9C0C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286841BF2CF7D002A9C0C /* Meal.h */,
+				E0E286851BF2CF7D002A9C0C /* Meal.m */,
+				E0E286871BF2CF8C002A9C0C /* User.h */,
+				E0E286881BF2CF8C002A9C0C /* User.m */,
+				E0E286BA1BF655DF002A9C0C /* Consumable.h */,
+				E0E286BB1BF655DF002A9C0C /* Consumable.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		E0E2868E1BF2D027002A9C0C /* ToTryListVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286951BF2D096002A9C0C /* ToTryListViewController.h */,
+				E0E286961BF2D096002A9C0C /* ToTryListViewController.m */,
+				E0E286B01BF5014D002A9C0C /* ToTryListTableViewCell.h */,
+				E0E286B11BF5014D002A9C0C /* ToTryListTableViewCell.m */,
+			);
+			name = ToTryListVC;
+			sourceTree = "<group>";
+		};
+		E0E286A21BF3C360002A9C0C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E0E2868F1BF2D04C002A9C0C /* WelcomeViewController.h */,
+				E0E286901BF2D04C002A9C0C /* WelcomeViewController.m */,
+				E0E286921BF2D071002A9C0C /* SignUpViewController.h */,
+				E0E286931BF2D071002A9C0C /* SignUpViewController.m */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		E0E286A31BF3C37A002A9C0C /* SwipeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0E2868B1BF2CFFB002A9C0C /* SwipeViewController.h */,
+				E0E2868C1BF2CFFB002A9C0C /* SwipeViewController.m */,
+				E0E286981BF2E033002A9C0C /* SwipedCardBackgroundView.h */,
+				E0E286991BF2E033002A9C0C /* SwipedCardBackgroundView.m */,
+				E0E2869B1BF2E05C002A9C0C /* SwipedCardView.h */,
+				E0E2869C1BF2E05C002A9C0C /* SwipedCardView.m */,
+				E0E2869E1BF2E06F002A9C0C /* OverlayView.h */,
+				E0E2869F1BF2E06F002A9C0C /* OverlayView.m */,
+			);
+			name = SwipeVC;
+			sourceTree = "<group>";
+		};
+		E0E286A71BF3CB2B002A9C0C /* GroceryListVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286A41BF3CB19002A9C0C /* GroceryListViewController.h */,
+				E0E286A51BF3CB19002A9C0C /* GroceryListViewController.m */,
+			);
+			name = GroceryListVC;
+			sourceTree = "<group>";
+		};
+		E0E286AB1BF3CB70002A9C0C /* MealDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286A81BF3CB6A002A9C0C /* MealDetailViewController.h */,
+				E0E286A91BF3CB6A002A9C0C /* MealDetailViewController.m */,
+				E0E286B71BF654B2002A9C0C /* ConsumableTableViewCell.h */,
+				E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */,
+			);
+			name = MealDetailVC;
+			sourceTree = "<group>";
+		};
+		E0E286AF1BF3CCAE002A9C0C /* RecipeVC */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286AC1BF3CCA7002A9C0C /* RecipeViewController.h */,
+				E0E286AD1BF3CCA7002A9C0C /* RecipeViewController.m */,
+			);
+			name = RecipeVC;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,10 +403,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0E2869A1BF2E033002A9C0C /* SwipedCardBackgroundView.m in Sources */,
+				E0E286A01BF2E06F002A9C0C /* OverlayView.m in Sources */,
+				E0E286BC1BF655DF002A9C0C /* Consumable.m in Sources */,
+				E0E286861BF2CF7D002A9C0C /* Meal.m in Sources */,
+				E0E2869D1BF2E05C002A9C0C /* SwipedCardView.m in Sources */,
+				E0E286B21BF5014D002A9C0C /* ToTryListTableViewCell.m in Sources */,
+				E0E286AA1BF3CB6A002A9C0C /* MealDetailViewController.m in Sources */,
+				E0E286971BF2D096002A9C0C /* ToTryListViewController.m in Sources */,
+				E0E286B91BF654B2002A9C0C /* ConsumableTableViewCell.m in Sources */,
 				E0E2865C1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld in Sources */,
-				E0E286561BF2CF42002A9C0C /* ViewController.m in Sources */,
+				E0E286891BF2CF8C002A9C0C /* User.m in Sources */,
 				E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */,
+				E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */,
 				E0E286501BF2CF42002A9C0C /* main.m in Sources */,
+				E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */,
+				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
+				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
+				E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

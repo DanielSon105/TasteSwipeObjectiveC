@@ -14,6 +14,11 @@
     // Initialization code
 }
 
+- (IBAction)mealSelected:(ToTryListTableViewCell *)sender {
+    NSLog(@"Food Button Selected");
+//    [self.delegate toTryListTableViewCell:self didTapButton:sender]; //called the protocol method on the delegate property
+}
+
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+#import "Meal.h"
+#import "ToTryListTableViewCell.h"
 
 @interface ToTryListViewController : UIViewController
+
+-(void)loadToTryListFromJSON;
 
 @end

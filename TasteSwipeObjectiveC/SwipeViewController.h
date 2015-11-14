@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
 
 @interface SwipeViewController : UIViewController
+
+@property User *user;
+
+
 
 @end

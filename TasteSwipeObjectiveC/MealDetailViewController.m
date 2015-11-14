@@ -8,7 +8,10 @@
 
 #import "MealDetailViewController.h"
 
-@interface MealDetailViewController ()
+@interface MealDetailViewController () <UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *mealImage;
+@property (weak, nonatomic) IBOutlet UITableView *consumbleTableView;
+@property NSMutableArray *consumablesArray;
 
 @end
 
@@ -16,22 +19,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.consumablesArray = [NSMutableArray new]; // Pass in Consumables from previous VC?  OR load consumables based on passed in meal?... leaning towards the latter
+    NSLog(@"%@", self.meal);
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - Consumables Tableview Cell Datasource and Delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.consumablesArray.count;
 }
 
-/*
-#pragma mark - Navigation
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumableCell"];
+//    cell.consumable = [self.toTryListMeals objectAtIndex:indexPath.row];
+//    cell.textLabel.text = cell.toTryListMeal.mealName;
+//    cell.imageView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:cell.toTryListMeal.mealImageURL]]];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    return cell;
 }
-*/
+
+
+
+-(NSURL *)documentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+
+}
+
+
+//-(void)save {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
+//    [self.toTryListMeals writeToURL:pList atomically:YES];
+//    NSLog(@"%@", pList);
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    [userDefaults setObject:[NSDate date] forKey:@"LastWriteDate"];
+//}
+//
+//-(void)load {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
+//    self.toTryListMeals = [NSMutableArray arrayWithContentsOfURL:pList];
+//}
 
 @end

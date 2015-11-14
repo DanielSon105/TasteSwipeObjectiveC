@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Meal.h"
+#import "User.h"
 
 @interface MealDetailViewController : UIViewController
+@property Meal *meal;
 
 @end

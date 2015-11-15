@@ -7,6 +7,7 @@
 //
 
 #import "MealDetailViewController.h"
+#import "ConsumableTableViewCell.h"
 
 @interface MealDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *mealImage;
@@ -19,21 +20,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.consumablesArray = [NSMutableArray new]; // Pass in Consumables from previous VC?  OR load consumables based on passed in meal?... leaning towards the latter
+    self.consumablesArray = [NSMutableArray new];
+    for (NSDictionary *dict in self.meal.mealConsumablesArray) {
+        Consumable *consumable = [[Consumable alloc] initConsumableWithJSON:dict];
+        [self.consumablesArray addObject:consumable];
+    }
+
+    // Pass in Consumables from previous VC?  OR load consumables based on passed in meal?... leaning towards the latter
     NSLog(@"%@", self.meal);
+    NSLog(@"%@", self.meal.mealName);
     // Do any additional setup after loading the view.
 }
 
 #pragma mark - Consumables Tableview Cell Datasource and Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.consumablesArray.count;
+    return self.meal.mealConsumablesArray.count;
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumableCell"];
-//    cell.consumable = [self.toTryListMeals objectAtIndex:indexPath.row];
-//    cell.textLabel.text = cell.toTryListMeal.mealName;
+-(ConsumableTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ConsumableTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ConsumableCell"];
+    cell.consumable = [self.consumablesArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = cell.consumable.consumableName;
+    NSLog(@"Cell Consumable Info --> %@", cell.consumable);
 //    cell.imageView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:cell.toTryListMeal.mealImageURL]]];
 
     return cell;

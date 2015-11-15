@@ -26,13 +26,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.temptoken = @"jBDN0mkWbvHLUKqqRA6v";
+    self.temptoken = @"jnVUF1e940V7kzVkxpjj";
 //    self.toTryListMeals = [NSMutableArray new];
 
     if (self.toTryListMeals == nil){
         self.toTryListMeals = [NSMutableArray new];
         self.getMealDictionaryJSON = [NSDictionary new];
-        self.temptoken = @"jBDN0mkWbvHLUKqqRA6v";
+        self.temptoken = @"jnVUF1e940V7kzVkxpjj";
         [self getToTryListMeals:self.temptoken];
     }
 }
@@ -103,7 +103,7 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
+    self.selectedMeal = [self.toTryListMeals objectAtIndex:indexPath.row];
     
     [self performSegueWithIdentifier: @"TryToMealDetailSegue" sender:self];
     //go to meal detail view

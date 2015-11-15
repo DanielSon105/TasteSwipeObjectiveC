@@ -30,6 +30,11 @@
 		E0E286B21BF5014D002A9C0C /* ToTryListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286B11BF5014D002A9C0C /* ToTryListTableViewCell.m */; };
 		E0E286B91BF654B2002A9C0C /* ConsumableTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */; };
 		E0E286BC1BF655DF002A9C0C /* Consumable.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286BB1BF655DF002A9C0C /* Consumable.m */; };
+		E0E286BF1BF6E440002A9C0C /* NetworkClient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286BE1BF6E440002A9C0C /* NetworkClient.m */; };
+		E0E286C31BF6E9E7002A9C0C /* GroceryListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */; };
+		E0E286C61BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286C51BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m */; };
+		E0E286C91BF7F52C002A9C0C /* ConsumableIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */; };
+		E0E286CC1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286CB1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +100,16 @@
 		E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumableTableViewCell.m; sourceTree = "<group>"; };
 		E0E286BA1BF655DF002A9C0C /* Consumable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consumable.h; sourceTree = "<group>"; };
 		E0E286BB1BF655DF002A9C0C /* Consumable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Consumable.m; sourceTree = "<group>"; };
+		E0E286BD1BF6E440002A9C0C /* NetworkClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
+		E0E286BE1BF6E440002A9C0C /* NetworkClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkClient.m; sourceTree = "<group>"; };
+		E0E286C11BF6E9E7002A9C0C /* GroceryListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItem.h; sourceTree = "<group>"; };
+		E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItem.m; sourceTree = "<group>"; };
+		E0E286C41BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumableIngredientTableViewCell.h; sourceTree = "<group>"; };
+		E0E286C51BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumableIngredientTableViewCell.m; sourceTree = "<group>"; };
+		E0E286C71BF7F52C002A9C0C /* ConsumableIngredient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConsumableIngredient.h; sourceTree = "<group>"; };
+		E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumableIngredient.m; sourceTree = "<group>"; };
+		E0E286CA1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItemTableViewCell.h; sourceTree = "<group>"; };
+		E0E286CB1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItemTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +162,7 @@
 			children = (
 				E0E286511BF2CF42002A9C0C /* AppDelegate.h */,
 				E0E286521BF2CF42002A9C0C /* AppDelegate.m */,
+				E0E286C01BF6E9B3002A9C0C /* Network */,
 				E0E2868A1BF2CFCE002A9C0C /* Models */,
 				E0E286A21BF3C360002A9C0C /* Login */,
 				E0E286A31BF3C37A002A9C0C /* SwipeVC */,
@@ -157,8 +173,8 @@
 				E0E2865A1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld */,
 				E0E2868E1BF2D027002A9C0C /* ToTryListVC */,
 				E0E286AB1BF3CB70002A9C0C /* MealDetailVC */,
-				E0E286A71BF3CB2B002A9C0C /* GroceryListVC */,
 				E0E286AF1BF3CCAE002A9C0C /* RecipeVC */,
+				E0E286A71BF3CB2B002A9C0C /* GroceryListVC */,
 				E0E2864E1BF2CF42002A9C0C /* Supporting Files */,
 			);
 			path = TasteSwipeObjectiveC;
@@ -199,6 +215,10 @@
 				E0E286881BF2CF8C002A9C0C /* User.m */,
 				E0E286BA1BF655DF002A9C0C /* Consumable.h */,
 				E0E286BB1BF655DF002A9C0C /* Consumable.m */,
+				E0E286C11BF6E9E7002A9C0C /* GroceryListItem.h */,
+				E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */,
+				E0E286C71BF7F52C002A9C0C /* ConsumableIngredient.h */,
+				E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -245,6 +265,8 @@
 			children = (
 				E0E286A41BF3CB19002A9C0C /* GroceryListViewController.h */,
 				E0E286A51BF3CB19002A9C0C /* GroceryListViewController.m */,
+				E0E286CA1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.h */,
+				E0E286CB1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m */,
 			);
 			name = GroceryListVC;
 			sourceTree = "<group>";
@@ -265,9 +287,20 @@
 			children = (
 				E0E286AC1BF3CCA7002A9C0C /* RecipeViewController.h */,
 				E0E286AD1BF3CCA7002A9C0C /* RecipeViewController.m */,
+				E0E286C41BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.h */,
+				E0E286C51BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m */,
 			);
 			name = RecipeVC;
 			path = ..;
+			sourceTree = "<group>";
+		};
+		E0E286C01BF6E9B3002A9C0C /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286BD1BF6E440002A9C0C /* NetworkClient.h */,
+				E0E286BE1BF6E440002A9C0C /* NetworkClient.m */,
+			);
+			name = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,13 +442,18 @@
 				E0E286861BF2CF7D002A9C0C /* Meal.m in Sources */,
 				E0E2869D1BF2E05C002A9C0C /* SwipedCardView.m in Sources */,
 				E0E286B21BF5014D002A9C0C /* ToTryListTableViewCell.m in Sources */,
+				E0E286BF1BF6E440002A9C0C /* NetworkClient.m in Sources */,
 				E0E286AA1BF3CB6A002A9C0C /* MealDetailViewController.m in Sources */,
+				E0E286C61BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m in Sources */,
 				E0E286971BF2D096002A9C0C /* ToTryListViewController.m in Sources */,
 				E0E286B91BF654B2002A9C0C /* ConsumableTableViewCell.m in Sources */,
 				E0E2865C1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld in Sources */,
 				E0E286891BF2CF8C002A9C0C /* User.m in Sources */,
 				E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */,
 				E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */,
+				E0E286C91BF7F52C002A9C0C /* ConsumableIngredient.m in Sources */,
+				E0E286C31BF6E9E7002A9C0C /* GroceryListItem.m in Sources */,
+				E0E286CC1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m in Sources */,
 				E0E286501BF2CF42002A9C0C /* main.m in Sources */,
 				E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */,
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,

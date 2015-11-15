@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "Meal.h"
+#import "Consumable.h"
 #import "User.h"
 
 @interface MealDetailViewController : UIViewController
+@property NSArray *consumables;
 @property Meal *meal;
 
 @end

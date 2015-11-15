@@ -13,12 +13,6 @@
 @interface ConsumableTableViewCell : UITableViewCell
 @property Consumable *consumable;
 
-@property NSInteger *consumableID;
-@property NSString *name;
-@property NSString *consumableDescription;
-@property NSString *imageURL;
-@property NSMutableArray *ingredientIDs;
-
 
 
 

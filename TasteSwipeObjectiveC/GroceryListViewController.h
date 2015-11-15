@@ -10,4 +10,8 @@
 
 @interface GroceryListViewController : UIViewController
 
+@property NSArray *groceries;
+
+- (void)loadData;
+
 @end

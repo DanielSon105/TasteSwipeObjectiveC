@@ -118,7 +118,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 // to get rid of it (eg: if you are building cards from data from the internet)
 -(SwipedCardView *)createSwipedCardViewWithDataAtIndex:(NSInteger)index
 {
-    NSLog(@"Create Draggable View With Data At Index Called");
+    NSLog(@"Create Swiped Card Background View With Data At Index Called");
     SwipedCardView *swipedCardView = [[SwipedCardView alloc]initWithFrame:CGRectMake((self.frame.size.width - CARD_WIDTH)/2, (self.frame.size.height - CARD_HEIGHT)/2, CARD_WIDTH, CARD_HEIGHT)];
     swipedCardView.meal = [self.randomJSONMeals objectAtIndex:index];
     swipedCardView.information.text = swipedCardView.meal.mealName;

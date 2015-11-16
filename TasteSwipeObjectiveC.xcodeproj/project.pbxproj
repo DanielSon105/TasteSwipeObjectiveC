@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0E8FFA51BFA338900EEFE28 /* RecipeCookingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFA41BFA338900EEFE28 /* RecipeCookingViewController.m */; };
+		B0E8FFA91BFA35CB00EEFE28 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFA81BFA35CB00EEFE28 /* EntryViewController.m */; };
+		B0E8FFAC1BFA3CA900EEFE28 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */; };
+		B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */; };
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
 		E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286521BF2CF42002A9C0C /* AppDelegate.m */; };
 		E0E286591BF2CF42002A9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E286571BF2CF42002A9C0C /* Main.storyboard */; };
@@ -57,6 +61,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0E8FFA31BFA338900EEFE28 /* RecipeCookingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeCookingViewController.h; sourceTree = "<group>"; };
+		B0E8FFA41BFA338900EEFE28 /* RecipeCookingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeCookingViewController.m; sourceTree = "<group>"; };
+		B0E8FFA71BFA35CB00EEFE28 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		B0E8FFA81BFA35CB00EEFE28 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
+		B0E8FFAA1BFA3CA900EEFE28 /* Recipe.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recipe.h; sourceTree = "<group>"; };
+		B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
+		B0E8FFAD1BFA479900EEFE28 /* RecipeStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeStep.h; sourceTree = "<group>"; };
+		B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStep.m; sourceTree = "<group>"; };
 		E0E2864B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteSwipeObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E2864F1BF2CF42002A9C0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0E286511BF2CF42002A9C0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -143,6 +155,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B0E8FFA61BFA34A900EEFE28 /* PageViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B0E8FFA31BFA338900EEFE28 /* RecipeCookingViewController.h */,
+				B0E8FFA41BFA338900EEFE28 /* RecipeCookingViewController.m */,
+				B0E8FFA71BFA35CB00EEFE28 /* EntryViewController.h */,
+				B0E8FFA81BFA35CB00EEFE28 /* EntryViewController.m */,
+			);
+			name = PageViewController;
+			sourceTree = "<group>";
+		};
 		E0E286421BF2CF41002A9C0C = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +204,7 @@
 				E0E2868E1BF2D027002A9C0C /* ToTryListVC */,
 				E0E286AB1BF3CB70002A9C0C /* MealDetailVC */,
 				E0E286AF1BF3CCAE002A9C0C /* RecipeVC */,
+				B0E8FFA61BFA34A900EEFE28 /* PageViewController */,
 				E0E286A71BF3CB2B002A9C0C /* GroceryListVC */,
 				E0E2864E1BF2CF42002A9C0C /* Supporting Files */,
 			);
@@ -226,6 +250,10 @@
 				E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */,
 				E0E286C11BF6E9E7002A9C0C /* GroceryListItem.h */,
 				E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */,
+				B0E8FFAA1BFA3CA900EEFE28 /* Recipe.h */,
+				B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */,
+				B0E8FFAD1BFA479900EEFE28 /* RecipeStep.h */,
+				B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -458,6 +486,7 @@
 				E0E286A01BF2E06F002A9C0C /* OverlayView.m in Sources */,
 				E0E286BC1BF655DF002A9C0C /* Consumable.m in Sources */,
 				E0E286861BF2CF7D002A9C0C /* Meal.m in Sources */,
+				B0E8FFA91BFA35CB00EEFE28 /* EntryViewController.m in Sources */,
 				E0E2869D1BF2E05C002A9C0C /* SwipedCardView.m in Sources */,
 				E0E286B21BF5014D002A9C0C /* ToTryListTableViewCell.m in Sources */,
 				E0E286BF1BF6E440002A9C0C /* NetworkClient.m in Sources */,
@@ -465,8 +494,10 @@
 				E0E286C61BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m in Sources */,
 				E0E286971BF2D096002A9C0C /* ToTryListViewController.m in Sources */,
 				E0E286B91BF654B2002A9C0C /* ConsumableTableViewCell.m in Sources */,
+				B0E8FFA51BFA338900EEFE28 /* RecipeCookingViewController.m in Sources */,
 				E0E2865C1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld in Sources */,
 				E0E286891BF2CF8C002A9C0C /* User.m in Sources */,
+				B0E8FFAC1BFA3CA900EEFE28 /* Recipe.m in Sources */,
 				E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */,
 				E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */,
 				E0E286CF1BF9A593002A9C0C /* AppSettingsViewController.m in Sources */,
@@ -478,6 +509,7 @@
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
 				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
+				B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */,
 				E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -702,6 +734,7 @@
 				E0E2867D1BF2CF42002A9C0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0E2867E1BF2CF42002A9C0C /* Build configuration list for PBXNativeTarget "TasteSwipeObjectiveCTests" */ = {
 			isa = XCConfigurationList;
@@ -710,6 +743,7 @@
 				E0E286801BF2CF42002A9C0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E0E286811BF2CF42002A9C0C /* Build configuration list for PBXNativeTarget "TasteSwipeObjectiveCUITests" */ = {
 			isa = XCConfigurationList;
@@ -718,6 +752,7 @@
 				E0E286831BF2CF42002A9C0C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

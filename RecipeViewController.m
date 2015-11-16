@@ -10,7 +10,7 @@
 #import "ConsumableIngredientTableViewCell.h"
 #import "ConsumableIngredient.h"
 #import "NetworkClient.h"
-
+#import "RecipeCookingViewController.h"
 
 @interface RecipeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -75,6 +75,18 @@
     //IF you confirm then add Grocery List Item to Array of Grocery List Items and update PList
 
     //NOTE: we also need to send either the grocery list array OR the PList File through the prepare for segue to the Grocery List VC
+}
+
+- (IBAction)onViewRecipeButtonTapped:(id)sender {
+    [self performSegueWithIdentifier:@"RecipeToStepsSegue" sender:self];
+}
+
+#pragma mark - prepareForSegue Methods
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if ([segue.identifier isEqual:@"RecipeToStepsSegue"]){
+        UINavigationController *recipeStepsNavigationController = segue.destinationViewController;
+        RecipeCookingViewController *rcvc = [recipeStepsNavigationController.childViewControllers objectAtIndex:0];
+    }
 }
 
 @end

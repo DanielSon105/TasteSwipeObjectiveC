@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "ConsumableIngredient.h"
+#import "Consumable.h"
 
 
 @interface RecipeViewController : UIViewController
-@property NSArray *consumableIngredients;
+@property Consumable *consumable;
 
 @end

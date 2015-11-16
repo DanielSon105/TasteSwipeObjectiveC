@@ -11,7 +11,9 @@
 @class User;
 
 @interface NetworkClient : NSObject
+@property NSString *accessToken;
 
+//+(NSString*)apiAuthorizationHeader;
 - (NSArray *)loadGroceryListFromCache;
 
 @end

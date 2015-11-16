@@ -85,9 +85,15 @@
                     NSMutableDictionary *tmp = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
 
                     //                    NSLog(@"temp --> %@", tmp);
-                    self.user.token = [tmp objectForKey:@"authentication_token"];
+                    NSString *tmpToken = [tmp objectForKey:@"authentication_token"];
+//                    self.user.token = tmpToken; // delete this if NSUserDefaults Works....
 
-                    NSLog(@"self.user.token --> %@", self.user.token);
+                    [[NSUserDefaults standardUserDefaults] setObject:tmpToken forKey:@"accessToken"];
+                    [[NSUserDefaults standardUserDefaults] synchronize];
+
+
+//                    NSLog(@"self.user.token --> %@", self.user.token);
+
 
                     [self performSegueWithIdentifier: @"SignInSegue" sender:self];
 

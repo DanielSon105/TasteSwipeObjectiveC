@@ -35,7 +35,8 @@
         [self setupView];
         NSLog(@"Init With Frame in SwipedCardView.m Called");
 
-#warning placeholder stuff, replace with card-specific information {
+#pragma mark - Card Specific Information
+
         self.meal = [Meal new];
         information = [[UILabel alloc]initWithFrame:CGRectMake(0, self.frame.size.height*.8, self.frame.size.width, 100)];
         information.text = @"no info given";
@@ -49,11 +50,6 @@
         NSLog(@"MealImageURL --> %@", self.meal.mealImageURL);
 //        self.mealImage.backgroundColor = [UIColor orangeColor];
 //        UIImage *scaledMealImage = [UIImage initWithCGImage:mealImage.image scale:((mealImage.image.size.height/mealImage.frame.size.height),(mealImage.image.size.width/mealImage.frame.size.width)) orientation:UIImageOrientationUp;
-
-
-
-
-#warning placeholder stuff, replace with card-specific information }
 
         self.backgroundColor = [UIColor whiteColor];
 
@@ -88,49 +84,40 @@
  }
  */
 
-//%%% called when you move your finger across the screen.
-// called many times a second
+#pragma mark - Card Drag Effect
+
 -(void)beingDragged:(UIPanGestureRecognizer *)gestureRecognizer
 {
-    //%%% this extracts the coordinate data from your swipe movement. (i.e. How much did you move?)
-    xFromCenter = [gestureRecognizer translationInView:self].x; //%%% positive for right swipe, negative for left
-    yFromCenter = [gestureRecognizer translationInView:self].y; //%%% positive for up, negative for down
+    //coordinate data from your swipe movement
+    xFromCenter = [gestureRecognizer translationInView:self].x; //positive for right swipe, negative for left
+    yFromCenter = [gestureRecognizer translationInView:self].y; //positive for up, negative for down
 
-    //%%% checks what state the gesture is in. (are you just starting, letting go, or in the middle of a swipe?)
+    //gesture state
     switch (gestureRecognizer.state) {
-            //%%% just started swiping
-        case UIGestureRecognizerStateBegan:{
+        case UIGestureRecognizerStateBegan: //just started swiping
+        {
             self.originalPoint = self.center;
             break;
         };
-            //%%% in the middle of a swipe
-        case UIGestureRecognizerStateChanged:{
-            //%%% dictates rotation (see ROTATION_MAX and ROTATION_STRENGTH for details)
-            CGFloat rotationStrength = MIN(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX);
 
-            //%%% degree change in radians
-            CGFloat rotationAngel = (CGFloat) (ROTATION_ANGLE * rotationStrength);
+        case UIGestureRecognizerStateChanged: //in the middle of a swipe
+        {
+            CGFloat rotationStrength = MIN(xFromCenter / ROTATION_STRENGTH, ROTATION_MAX); //dictates rotation
+            CGFloat rotationAngel = (CGFloat) (ROTATION_ANGLE * rotationStrength); //degree change in radians
+            CGFloat scale = MAX(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX); //amount the height changes when you move the card up to a certain point
+            self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter); //move the object's center
+            CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel); //rotate by certain amount
+            CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale); //scale by certain amount
 
-            //%%% amount the height changes when you move the card up to a certain point
-            CGFloat scale = MAX(1 - fabs(rotationStrength) / SCALE_STRENGTH, SCALE_MAX);
-
-            //%%% move the object's center by center + gesture coordinate
-            self.center = CGPointMake(self.originalPoint.x + xFromCenter, self.originalPoint.y + yFromCenter);
-
-            //%%% rotate by certain amount
-            CGAffineTransform transform = CGAffineTransformMakeRotation(rotationAngel);
-
-            //%%% scale by certain amount
-            CGAffineTransform scaleTransform = CGAffineTransformScale(transform, scale, scale);
-
-            //%%% apply transformations
+            //apply transformations
             self.transform = scaleTransform;
             [self updateOverlay:xFromCenter];
 
             break;
         };
-            //%%% let go of the card
-        case UIGestureRecognizerStateEnded: {
+
+        case UIGestureRecognizerStateEnded: //let go of the card
+        {
             [self afterSwipeAction];
             break;
         };
@@ -140,7 +127,8 @@
     }
 }
 
-//%%% checks to see if you are moving right or left and applies the correct overlay image
+#pragma mark - Check and X Population When Swiping
+//Applies a Check when swiping Right and an X when swiping left.  Consider changing these graphics
 -(void)updateOverlay:(CGFloat)distance
 {
     if (distance > 0) {
@@ -152,7 +140,8 @@
     overlayView.alpha = MIN(fabs(distance)/100, 0.4);
 }
 
-//%%% called when the card is let go
+#pragma mark - Letting Go of The Card
+
 - (void)afterSwipeAction
 {
     if (xFromCenter > ACTION_MARGIN) {

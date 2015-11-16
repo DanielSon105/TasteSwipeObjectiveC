@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ConsumableIngredient.h"
 
 @interface ConsumableIngredientTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *customMainLabel;
+@property (weak, nonatomic) IBOutlet UILabel *customDetailLabel;
+@property (weak, nonatomic) IBOutlet UIButton *groceryListButton;
+@property ConsumableIngredient *consumableIngredient;
 
 @end

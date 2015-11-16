@@ -8,8 +8,11 @@
 
 #import "ToTryListViewController.h"
 #import "MealDetailViewController.h"
+#import "NetworkClient.h"
 
 @interface ToTryListViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (nonatomic, strong) NSURLSession *session;
 
 @property NSMutableArray *toTryListMeals;
 @property NSDictionary *getMealDictionaryJSON;
@@ -26,17 +29,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.temptoken = @"jnVUF1e940V7kzVkxpjj";
+//    self.temptoken = @"jnVUF1e940V7kzVkxpjj";
+     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
+    [self getToTryListMeals:accessToken];
 //    self.toTryListMeals = [NSMutableArray new];
 
-    if (self.toTryListMeals == nil){
-        self.toTryListMeals = [NSMutableArray new];
-        self.getMealDictionaryJSON = [NSDictionary new];
-        self.temptoken = @"jnVUF1e940V7kzVkxpjj";
-        [self getToTryListMeals:self.temptoken];
-    }
+//    if (self.toTryListMeals == nil){
+//        self.toTryListMeals = [NSMutableArray new];
+//        self.getMealDictionaryJSON = [NSDictionary new];
+//        self.temptoken = @"jnVUF1e940V7kzVkxpjj";
+//        [self getToTryListMeals:self.temptoken];
+//    }
 }
 
+//- (id)initWithCoder:(NSCoder *)aDecoder
+//{
+//    self = [super initWithCoder:aDecoder];
+//    if (self) {
+//        // 1
+//        NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+//
+//        // 2
+//        [config setHTTPAdditionalHeaders:@{@"Authorization": [NetworkClient apiAuthorizationHeader]}];
+//        
+//
+//        // 3
+//        _session = [NSURLSession sessionWithConfiguration:config];
+//    }
+//    return self;
+//}
 
 
 

@@ -35,6 +35,8 @@
 		E0E286C61BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286C51BF7F4A2002A9C0C /* ConsumableIngredientTableViewCell.m */; };
 		E0E286C91BF7F52C002A9C0C /* ConsumableIngredient.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */; };
 		E0E286CC1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286CB1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m */; };
+		E0E286CF1BF9A593002A9C0C /* AppSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286CE1BF9A593002A9C0C /* AppSettingsViewController.m */; };
+		E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286D11BF9A5BA002A9C0C /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,10 @@
 		E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConsumableIngredient.m; sourceTree = "<group>"; };
 		E0E286CA1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroceryListItemTableViewCell.h; sourceTree = "<group>"; };
 		E0E286CB1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroceryListItemTableViewCell.m; sourceTree = "<group>"; };
+		E0E286CD1BF9A593002A9C0C /* AppSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettingsViewController.h; sourceTree = "<group>"; };
+		E0E286CE1BF9A593002A9C0C /* AppSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettingsViewController.m; sourceTree = "<group>"; };
+		E0E286D01BF9A5BA002A9C0C /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		E0E286D11BF9A5BA002A9C0C /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,13 +166,14 @@
 		E0E2864D1BF2CF42002A9C0C /* TasteSwipeObjectiveC */ = {
 			isa = PBXGroup;
 			children = (
+				E0E286571BF2CF42002A9C0C /* Main.storyboard */,
 				E0E286511BF2CF42002A9C0C /* AppDelegate.h */,
 				E0E286521BF2CF42002A9C0C /* AppDelegate.m */,
 				E0E286C01BF6E9B3002A9C0C /* Network */,
 				E0E2868A1BF2CFCE002A9C0C /* Models */,
 				E0E286A21BF3C360002A9C0C /* Login */,
+				E0E286D31BF9A5C9002A9C0C /* Settings */,
 				E0E286A31BF3C37A002A9C0C /* SwipeVC */,
-				E0E286571BF2CF42002A9C0C /* Main.storyboard */,
 				E0E2865D1BF2CF42002A9C0C /* Assets.xcassets */,
 				E0E2865F1BF2CF42002A9C0C /* LaunchScreen.storyboard */,
 				E0E286621BF2CF42002A9C0C /* Info.plist */,
@@ -209,16 +216,16 @@
 		E0E2868A1BF2CFCE002A9C0C /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E0E286841BF2CF7D002A9C0C /* Meal.h */,
-				E0E286851BF2CF7D002A9C0C /* Meal.m */,
 				E0E286871BF2CF8C002A9C0C /* User.h */,
 				E0E286881BF2CF8C002A9C0C /* User.m */,
+				E0E286841BF2CF7D002A9C0C /* Meal.h */,
+				E0E286851BF2CF7D002A9C0C /* Meal.m */,
 				E0E286BA1BF655DF002A9C0C /* Consumable.h */,
 				E0E286BB1BF655DF002A9C0C /* Consumable.m */,
-				E0E286C11BF6E9E7002A9C0C /* GroceryListItem.h */,
-				E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */,
 				E0E286C71BF7F52C002A9C0C /* ConsumableIngredient.h */,
 				E0E286C81BF7F52C002A9C0C /* ConsumableIngredient.m */,
+				E0E286C11BF6E9E7002A9C0C /* GroceryListItem.h */,
+				E0E286C21BF6E9E7002A9C0C /* GroceryListItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -301,6 +308,17 @@
 				E0E286BE1BF6E440002A9C0C /* NetworkClient.m */,
 			);
 			name = Network;
+			sourceTree = "<group>";
+		};
+		E0E286D31BF9A5C9002A9C0C /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				E0E286CD1BF9A593002A9C0C /* AppSettingsViewController.h */,
+				E0E286CE1BF9A593002A9C0C /* AppSettingsViewController.m */,
+				E0E286D01BF9A5BA002A9C0C /* SettingsViewController.h */,
+				E0E286D11BF9A5BA002A9C0C /* SettingsViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,12 +469,14 @@
 				E0E286891BF2CF8C002A9C0C /* User.m in Sources */,
 				E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */,
 				E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */,
+				E0E286CF1BF9A593002A9C0C /* AppSettingsViewController.m in Sources */,
 				E0E286C91BF7F52C002A9C0C /* ConsumableIngredient.m in Sources */,
 				E0E286C31BF6E9E7002A9C0C /* GroceryListItem.m in Sources */,
 				E0E286CC1BF7F5C7002A9C0C /* GroceryListItemTableViewCell.m in Sources */,
 				E0E286501BF2CF42002A9C0C /* main.m in Sources */,
 				E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */,
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
+				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
 				E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */,
 			);

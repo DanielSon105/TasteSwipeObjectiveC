@@ -10,4 +10,17 @@
 
 @implementation ConsumableIngredient
 
+-(instancetype)initConsumableIngredientWithJSON:(NSDictionary *)json{
+    self = [super init];
+
+    if (self) {
+        self.ingredientDescription = json[@"description"];
+        self.ingredientID = json[@"id"];
+        self.imageURL = json[@"image_url"];
+        self.ingredientName = json[@"name"];
+    }
+
+    return self;
+}
+
 @end

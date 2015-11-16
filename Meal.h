@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "User.h"
+#import "NetworkClient.h"
 
 @interface Meal : NSObject
 
@@ -18,13 +19,17 @@
 @property NSString *mealName;
 @property NSString *mealDescription;
 @property NSString *mealImageURL;
+@property NSString *calories;
+@property NSString *proteinGrams;
+@property NSString *carbohydrateGrams;
+@property NSString *fatGrams;
+@property NSString *category;
 @property NSArray *mealConsumablesArray;
 
--(void)postMealToToTryList:(User *)user;
+-(void)postMealToToTryList:(NSString *)networkClient;
 -(void)deleteMealFromToTryList;
 
--(void)postMealToDisinterestedList;
--(void)deleteMealFromDisinterestedList;
+-(void)postMealToDisinterestedList:(NSString *)networkClient;
 
 
 @end

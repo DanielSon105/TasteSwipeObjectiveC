@@ -8,6 +8,7 @@
 
 #import "SwipedCardBackgroundView.h"
 #import "SwipedCardView.h"
+#import "NetworkClient.h"
 
 @implementation SwipedCardBackgroundView{
     NSInteger cardsLoadedIndex; //%%% the index of the card you have loaded into the loadedCards array last
@@ -21,8 +22,7 @@
     UIButton* checkButton;
     UIButton* xButton;
 }
-//this makes it so only two cards are loaded at a time to
-//avoid performance and memory costs
+
 static const int MAX_BUFFER_SIZE = 2; //%%% max number of cards loaded at any given time, must be greater than 1
 static const float CARD_HEIGHT = 386; //%%% height of the draggable card
 static const float CARD_WIDTH = 290; //%%% width of the draggable card
@@ -36,11 +36,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     if (self) {
         [super layoutSubviews];
         [self setupView];
-        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
-//        loadedCards = [[NSMutableArray alloc] init];
-//        allCards = [[NSMutableArray alloc] init];
-//        cardsLoadedIndex = 0;
-//        [self loadCards];
+//        exampleCardLabels = [[NSArray alloc]initWithObjects:@"first",@"second",@"third",@"fourth",@"last", nil]; //%%% placeholder for card-specific information
+////        loadedCards = [[NSMutableArray alloc] init];
+////        allCards = [[NSMutableArray alloc] init];
+////        cardsLoadedIndex = 0;
+////        [self loadCards];
     }
     return self;
 }
@@ -67,11 +67,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
         }
         dispatch_async(dispatch_get_main_queue(), ^{
 
-            self.user.token = token; //THIS IS JUST HERE UNTIL I FIND A BETTER WAY TO GO ABOUT MANAGING THE TOKEN STUFF.
+//            self.user.token = token; //THIS IS JUST HERE UNTIL I FIND A BETTER WAY TO GO ABOUT MANAGING THE TOKEN STUFF.
 
             getMealDictionaryJSON = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
             arrayOfMealDictionaries = [getMealDictionaryJSON objectForKey:@"meals"];
-            NSLog(@"%@",arrayOfMealDictionaries);
+//            NSLog(@"%@",arrayOfMealDictionaries);
             self.randomJSONMeals = [NSMutableArray new];
             for (NSDictionary *dict in arrayOfMealDictionaries) {
                 Meal *meal = [[Meal alloc] initMealWithContentsOfDictionary:dict];
@@ -94,7 +94,6 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-#warning customize all of this.  These are just place holders to make it look pretty
     self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
     menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
     [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
@@ -112,10 +111,8 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     [self addSubview:checkButton];
 }
 
-#warning include own card customization here!
-//%%% creates a card and returns it.  This should be customized to fit your needs.
-// use "index" to indicate where the information should be pulled.  If this doesn't apply to you, feel free
-// to get rid of it (eg: if you are building cards from data from the internet)
+#pragma mark - Card Customization
+
 -(SwipedCardView *)createSwipedCardViewWithDataAtIndex:(NSInteger)index
 {
     NSLog(@"Create Swiped Card Background View With Data At Index Called");
@@ -141,9 +138,7 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     NSLog(@"Load Cards Called");
     if([self.randomJSONMeals count] > 0) {
         NSInteger numLoadedCardsCap =(([self.randomJSONMeals count] > MAX_BUFFER_SIZE)?MAX_BUFFER_SIZE:[self.randomJSONMeals count]);
-        //%%% if the buffer size is greater than the data size, there will be an array error, so this makes sure that doesn't happen
 
-        //%%% loops through the exampleCardsLabels array to create a card for each label.  This should be customized by removing "exampleCardLabels" with your own array of data
         for (int i = 0; i<[self.randomJSONMeals count]; i++) {
             SwipedCardView* newCard = [self createSwipedCardViewWithDataAtIndex:i];
             NSLog(@"newCard instantiated.");
@@ -151,13 +146,11 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 
             if (i<numLoadedCardsCap) {
                 NSLog(@"i is less than numLoadedCardsCap and Cap is %lu", numLoadedCardsCap);
-                //%%% adds a small number of cards to be loaded
+                //adds a small number of cards to be loaded
                 [loadedCards addObject:newCard];
             }
         }
 
-        //%%% displays the small number of loaded cards dictated by MAX_BUFFER_SIZE so that not all the cards
-        // are showing at once and clogging a ton of data
         for (int i = 0; i<[loadedCards count]; i++) {
             if (i>0) {
                 [self insertSubview:[loadedCards objectAtIndex:i] belowSubview:[loadedCards objectAtIndex:i-1]];
@@ -167,19 +160,19 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
                 NSLog(@"add Subview called");
             }
             NSLog(@"cardsLoadedIndex called");
-            cardsLoadedIndex++; //%%% we loaded a card into loaded cards, so we have to increment
+            cardsLoadedIndex++; //increment after loading a card
         }
     }
 }
 
-#warning include own action here!
-//%%% action called when the card goes to the left.
-// This should be customized with your own action
+//action(s) called when the card goes to the left
 -(void)cardSwipedLeft:(UIView *)card;
 {
     NSLog(@"Card Swiped Left Called");
     //do whatever you want with the card that was swiped
-        SwipedCardView *c = (SwipedCardView *)card;
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
+    SwipedCardView *c = (SwipedCardView *)card;
+    [c.meal postMealToDisinterestedList:accessToken];
 
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"
 
@@ -190,16 +183,15 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }
 }
 
-#warning include own action here!
-//%%% action called when the card goes to the right.
-// This should be customized with your own action
+//action called when the card goes to the right.
 -(void)cardSwipedRight:(UIView *)card
 {
+    NSUserDefaults *tokenDef = [NSUserDefaults standardUserDefaults];
+    NSString *accessToken = [tokenDef stringForKey:@"accessToken"];
     NSLog(@"Card Swiped Right Called");
-    //do whatever you want with the card that was swiped
     SwipedCardView *c = (SwipedCardView *)card;
     NSLog(@"%@", c);
-    [c.meal postMealToToTryList:self.user];
+    [c.meal postMealToToTryList:accessToken];
     
 
     [loadedCards removeObjectAtIndex:0]; //%%% card was swiped, so it's no longer a "loaded card"

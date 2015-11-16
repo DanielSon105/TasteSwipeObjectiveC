@@ -8,11 +8,14 @@
 
 #import "MealDetailViewController.h"
 #import "ConsumableTableViewCell.h"
+#import "RecipeViewController.h"
 
 @interface MealDetailViewController () <UITableViewDelegate, UITableViewDataSource>
+
 @property (weak, nonatomic) IBOutlet UIImageView *mealImage;
 @property (weak, nonatomic) IBOutlet UITableView *consumbleTableView;
 @property NSMutableArray *consumablesArray;
+@property Consumable *selectedConsumable;
 
 @end
 
@@ -35,7 +38,7 @@
 #pragma mark - Consumables Tableview Cell Datasource and Delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.meal.mealConsumablesArray.count;
+    return self.consumablesArray.count;
 }
 
 -(ConsumableTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -48,12 +51,36 @@
     return cell;
 }
 
-
-
--(NSURL *)documentsDirectory {
-    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedConsumable = [self.consumablesArray objectAtIndex:indexPath.row]; // make sure this is the correct array
+    [self performSegueWithIdentifier: @"ConsumablesToRecipeSegue" sender:self];
 
 }
+
+#pragma mark - Prepare For Segue
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    //ConsumablesToRecipeSegue
+    if ([segue.identifier isEqual: @"ConsumablesToRecipeSegue"]) {
+//       RecipeViewController *rvc = segue.destinationViewController;
+
+
+
+
+        UINavigationController *recipeNavigationController = segue.destinationViewController;
+        RecipeViewController *rvc = [recipeNavigationController.childViewControllers objectAtIndex:0];
+        NSLog(@"%@", recipeNavigationController.childViewControllers);
+        rvc.consumable = self.selectedConsumable;
+    }
+
+}
+
+
+
+//-(NSURL *)documentsDirectory {
+//    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+//
+//}
 
 
 //-(void)save {

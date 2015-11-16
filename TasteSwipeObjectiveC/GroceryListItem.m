@@ -15,8 +15,8 @@
 
     if (self) {
         self.ingredient = json[@"ingredient"];
-        self.amount = json[@"description"];
-        self.unitOfMeasurement = json[@"avatar_url"];
+        self.amount = json[@"amount"];
+        self.unitOfMeasurement = json[@"unit"];
     }
 
     return self;

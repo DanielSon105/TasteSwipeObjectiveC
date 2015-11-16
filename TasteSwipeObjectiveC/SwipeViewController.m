@@ -18,8 +18,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
+
+    NSLog(@"NSUserDefaults value for accessToken key --> %@", accessToken);
     SwipedCardBackgroundView *swipedCardBackgroundView = [[SwipedCardBackgroundView alloc]initWithFrame:self.view.frame];
-    [swipedCardBackgroundView getMealInfo:self.user.token];
+    [swipedCardBackgroundView getMealInfo:accessToken];
     [self.view addSubview:swipedCardBackgroundView];
     NSLog(@"SwipedCardBackgroundView alloc init complete");
 }

@@ -21,6 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.networkClient = [NetworkClient new];
+    self.groceries = [self.networkClient loadGroceryListFromCache];
+    NSLog(@"%@",self.groceries);
+    //Load the grocery list Plist on this view Controller
 
     [self loadData];
 }

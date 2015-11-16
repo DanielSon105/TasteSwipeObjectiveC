@@ -19,6 +19,11 @@
         self.mealName = [mealDictionary objectForKey:@"name"];
         self.mealDescription =[mealDictionary objectForKey:@"description"];
         self.mealImageURL = [mealDictionary objectForKey:@"image_url"];
+        self.calories = [mealDictionary objectForKey:@"calories"];
+        self.proteinGrams = [mealDictionary objectForKey:@"protein_grams"];
+        self.carbohydrateGrams = [mealDictionary objectForKey:@"carbohydrate_grams"];
+        self.fatGrams = [mealDictionary objectForKey:@"fat_grams"];
+        self.fatGrams = [mealDictionary objectForKey:@"category"];
         self.mealConsumablesArray = [mealDictionary objectForKey:@"consumables"];
     }
 
@@ -29,11 +34,9 @@
     
 }
 
--(void)postMealToToTryList:(User *)user{
+-(void)postMealToToTryList:(NSString *)accessToken{
     //do this for meals you swipe right on
-
-
-    NSString* token = @"jBDN0mkWbvHLUKqqRA6v";
+//    NSString *cachedToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
 
     // Create the request.
     NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -46,16 +49,18 @@
     // Set Header Fields
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Accept"];
-    [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"; charset=utf-8", token] forHTTPHeaderField:@"Authorization"];
-    
+    [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"; charset=utf-8", accessToken] forHTTPHeaderField:@"Authorization"];
+
+    NSLog(@"Token token=\"%@\"; charset=utf-8", accessToken);
+
 
     // Convert data and set request's HTTPBody property
-//    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:self.mealID, @"email", password, @"password", passwordConfirmation, @"password_confirmation", nil];
-//    NSArray *tmp = user.toTryMealArray;
+    //    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:self.mealID, @"email", password, @"password", passwordConfirmation, @"password_confirmation", nil];
+    //    NSArray *tmp = user.toTryMealArray;
 
     NSError *error;
-//    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
-//    [request setHTTPBody:postdata];
+    //    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    //    [request setHTTPBody:postdata];
 
     NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
 
@@ -81,14 +86,14 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     NSLog(@"%@", text);
-//                    [user.toTryMealArray addObject:self.mealID];
+                    //                    [user.toTryMealArray addObject:self.mealID];
 
 
                     //set u
                 });
 
             } else {
-                NSLog(@"Sign-up didn't work");
+                NSLog(@"Swipe Right didn't work");
                 // HANDLE BAD RESPONSE //
             }
         } else {
@@ -98,19 +103,71 @@
         
     }];
     [postDataTask resume];
-
+    
 }
 
 -(void)deleteMealFromToTryList{
 
 }
 
--(void)postMealToDisinterestedList{
+-(void)postMealToDisinterestedList:(NSString *)accessToken{
     //do this for meals you swipe left on
-}
+    NSString *cachedToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
+    // Create the request.
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration delegate:nil delegateQueue:nil];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://tasteswipe-int.herokuapp.com/meal/%@/left",self.mealID]]];
 
--(void)removeMealFromDisinterestedList{
+    // Specify that it will be a POST request
+    request.HTTPMethod = @"POST";
 
+    // Set Header Fields
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Accept"];
+    [request setValue:[NSString stringWithFormat:@"Token token=\"%@\"; charset=utf-8", cachedToken] forHTTPHeaderField:@"Authorization"];
+
+    NSLog(@"Token token=\"%@\"; charset=utf-8", cachedToken);
+
+
+    // Convert data and set request's HTTPBody property
+    //    NSDictionary *tmp = [[NSDictionary alloc] initWithObjectsAndKeys:self.mealID, @"email", password, @"password", passwordConfirmation, @"password_confirmation", nil];
+    //    NSArray *tmp = user.toTryMealArray;
+
+    NSError *error;
+    //    NSData *postdata = [NSJSONSerialization dataWithJSONObject:tmp options:0 error:&error];
+    //    [request setHTTPBody:postdata];
+
+    NSURLSessionDataTask *postDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+
+        if (!error) {
+            NSHTTPURLResponse *httpResp = (NSHTTPURLResponse*) response;
+            NSLog(@"Response --> %@", response);
+            if (httpResp.statusCode == 200) {
+                // 3
+                NSString *text =
+                [[NSString alloc]initWithData:data
+                                     encoding:NSUTF8StringEncoding];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+                    NSLog(@"%@", text);
+                    //                    [user.toTryMealArray addObject:self.mealID];
+
+
+                    //set u
+                });
+
+            } else {
+                NSLog(@"Swipe Left didn't work");
+                // HANDLE BAD RESPONSE //
+            }
+        } else {
+            // ALWAYS HANDLE ERRORS :-] //
+        }
+        // 4
+        
+    }];
+    [postDataTask resume];
+    
 }
 
 

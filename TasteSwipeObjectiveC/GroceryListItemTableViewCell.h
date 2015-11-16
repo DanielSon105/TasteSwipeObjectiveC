@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GroceryListItem.h"
 
 @interface GroceryListItemTableViewCell : UITableViewCell
+@property GroceryListItem *groceryListItem;
 
 @end

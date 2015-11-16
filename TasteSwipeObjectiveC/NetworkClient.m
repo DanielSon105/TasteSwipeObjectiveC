@@ -83,6 +83,14 @@
 
 #pragma mark - backlogged URLs
 
+//Tried a Meal      POST /meal/:meal_id/tried
+//Rate a Meal       POST /meal/:meal_id/rated
+
+//List Tried Meals	GET /tried_meals
+//Get Recipe        GET /recipe/:recipe_id
+
+//Rate Meal         POST /meal/:meal_id/rate
+//Comment on Meal	POST /meal/:meal_id/comment
 
 #pragma mark - Grocery List Stuff
 
@@ -97,7 +105,6 @@
         NSMutableArray *groceryListArray = [NSMutableArray new];
         for (NSDictionary *json in groceries) {
             GroceryListItem *item = [[GroceryListItem alloc] initWithJSON:json]; //
-//            [self loadImageFromURL:meal]; // we don't have images for individual items yet... not sure if we ever will? perhaps Nutritionix API will
             [groceryListArray addObject:item];
         }
 

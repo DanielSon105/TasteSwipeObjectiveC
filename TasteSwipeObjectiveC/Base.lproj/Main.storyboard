@@ -179,6 +179,9 @@
                     <navigationItem key="navigationItem" id="T6e-KB-Oci">
                         <barButtonItem key="leftBarButtonItem" image="settings" id="F1O-sE-ZeX">
                             <color key="tintColor" red="0.0" green="1" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="PPI-5x-0bj" kind="show" id="c7y-IY-1Ok"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="To Try List" id="Hkh-Xd-j16">
                             <connections>
@@ -210,7 +213,7 @@
                                     <rect key="frame" x="156" y="194" width="89" height="30"/>
                                 </variation>
                                 <connections>
-                                    <segue destination="xwu-xu-Egg" kind="presentation" id="YuU-ZN-kCu"/>
+                                    <segue destination="xwu-xu-Egg" kind="show" id="YuU-ZN-kCu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -226,11 +229,25 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="fQ2-mK-fHS"/>
+                    <navigationItem key="navigationItem" id="fQ2-mK-fHS">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="jQJ-ws-xJW">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Eng-yg-ukS">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="ejg-Et-HOM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="p1q-fd-4SY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Swipe"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTF-bx-lkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637" y="1837"/>
+            <point key="canvasLocation" x="1702.5" y="1826"/>
         </scene>
         <!--App Settings View Controller-->
         <scene sceneID="2hL-SV-Fbm">
@@ -270,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55Q-db-MIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3342" y="1837"/>
+            <point key="canvasLocation" x="2455.5" y="1826"/>
         </scene>
         <!--To Try List View Controller-->
         <scene sceneID="1gZ-wX-Ioi">
@@ -657,7 +674,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgl-9Q-XKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5997" y="1814"/>
+            <point key="canvasLocation" x="5800.5" y="1818"/>
         </scene>
         <!--Grocery List View Controller-->
         <scene sceneID="FQA-cx-1v1">
@@ -678,22 +695,27 @@
                                     <rect key="frame" x="0.0" y="64" width="400" height="44"/>
                                 </variation>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-Q5-PvC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-Q5-PvC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Fu3-N4-Zzl">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryListItemTableViewCell" rowHeight="100" id="Fu3-N4-Zzl" customClass="GroceryListItemTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fu3-N4-Zzl" id="AIZ-i6-6Js">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="0.0" y="108" width="400" height="492"/>
                                 </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="tPF-5S-T68" id="xCn-Ku-DzF"/>
+                                    <outlet property="delegate" destination="tPF-5S-T68" id="0eA-G5-B12"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -711,6 +733,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="n7g-qB-gCF"/>
+                    <connections>
+                        <outlet property="tableView" destination="W9f-Q5-PvC" id="A8o-eD-u6K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMV-ax-ssr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -963,7 +988,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gJv-Qf-2UV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4176" y="1991"/>
+            <point key="canvasLocation" x="3258" y="2026"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XVD-Zq-ARh">
@@ -1035,7 +1060,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ok9-a3-pRH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1687.5" y="1837"/>
+            <point key="canvasLocation" x="925.5" y="1826"/>
         </scene>
     </scenes>
     <resources>

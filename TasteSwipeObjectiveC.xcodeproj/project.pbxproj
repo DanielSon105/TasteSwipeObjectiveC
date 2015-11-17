@@ -70,7 +70,6 @@
 		B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		B0E8FFAD1BFA479900EEFE28 /* RecipeStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeStep.h; sourceTree = "<group>"; };
 		B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStep.m; sourceTree = "<group>"; };
-
 		E081A1871BFAE2FD003FED9C /* NutritionalInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionalInformationViewController.h; sourceTree = "<group>"; };
 		E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionalInformationViewController.m; sourceTree = "<group>"; };
 		E0E2864B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteSwipeObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -513,7 +512,6 @@
 				E0E286501BF2CF42002A9C0C /* main.m in Sources */,
 				E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */,
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
-
 				E081A1891BFAE2FD003FED9C /* NutritionalInformationViewController.m in Sources */,
 				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,

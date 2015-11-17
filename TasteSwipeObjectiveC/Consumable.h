@@ -14,6 +14,7 @@
 @property NSString * image_url;
 @property NSArray * consumableIngredients;
 @property NSString * consumableName;
+@property NSString * recipeID;
 
 -(instancetype)initConsumableWithJSON:(NSDictionary *)json;
 

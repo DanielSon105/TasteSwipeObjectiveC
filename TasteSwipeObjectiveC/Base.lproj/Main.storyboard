@@ -492,7 +492,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="874-4H-0BV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="874-4H-0BV">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -782,6 +782,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ingredientsTableView" destination="MAa-wG-af0" id="sQ7-3G-uqg"/>
+                        <outlet property="showRecipeButton" destination="YWe-q5-Vsj" id="QAl-8E-PV0"/>
                         <segue destination="7MO-YA-Rk3" kind="show" identifier="RecipeToStepsSegue" id="tnv-Gp-PWf"/>
                     </connections>
                 </viewController>
@@ -867,6 +868,7 @@
                     </view>
                     <connections>
                         <outlet property="order" destination="Rh2-Q6-ks6" id="ujE-k8-73i"/>
+                        <outlet property="recipeStepImage" destination="Fa8-d0-Rw6" id="xgV-05-g9Z"/>
                         <outlet property="stepDescription" destination="RUx-9O-JiU" id="ax1-6K-pfM"/>
                     </connections>
                 </viewController>

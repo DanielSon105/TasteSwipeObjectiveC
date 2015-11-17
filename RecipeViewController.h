@@ -12,5 +12,7 @@
 
 @interface RecipeViewController : UIViewController
 @property Consumable *consumable;
+@property BOOL hasRecipeID;
+
 
 @end

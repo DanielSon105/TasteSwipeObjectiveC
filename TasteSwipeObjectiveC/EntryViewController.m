@@ -36,8 +36,6 @@
     NSMutableAttributedString *mutAttrTextViewString = [[NSMutableAttributedString alloc] initWithString:strTextView];
     [mutAttrTextViewString setAttributes:dictBoldText range:rangeBold];
 
-//    [textViewTermsPolicy setAttributedText:mutAttrTextViewString];
-//    self.stepDescription.text = [NSString stringWithFormat:@"Step %@: %@", self.step.order, self.step.stepDescription];
     [self.stepDescription setAttributedText:mutAttrTextViewString];
 }
 

@@ -23,6 +23,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: self.meal.mealImageURL]];
+    self.mealImage.image = [UIImage imageWithData:imageData];
     self.consumablesArray = [NSMutableArray new];
     for (NSDictionary *dict in self.meal.mealConsumablesArray) {
         Consumable *consumable = [[Consumable alloc] initConsumableWithJSON:dict];
@@ -53,6 +55,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedConsumable = [self.consumablesArray objectAtIndex:indexPath.row]; // make sure this is the correct array
+    NSLog(@"self.selected Consumable didSelectRow --> %@", self.selectedConsumable);
     [self performSegueWithIdentifier: @"ConsumablesToRecipeSegue" sender:self];
 
 }
@@ -61,6 +64,7 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     //ConsumablesToRecipeSegue
+
     if ([segue.identifier isEqual: @"ConsumablesToRecipeSegue"]) {
 //       RecipeViewController *rvc = segue.destinationViewController;
 
@@ -71,6 +75,10 @@
         RecipeViewController *rvc = [recipeNavigationController.childViewControllers objectAtIndex:0];
         NSLog(@"%@", recipeNavigationController.childViewControllers);
         rvc.consumable = self.selectedConsumable;
+        NSLog(@"%@", self.selectedConsumable.recipeID);
+        if (self.selectedConsumable.recipeID == NULL) {
+            rvc.hasRecipeID = YES;
+        }
     }
 
 }

@@ -19,12 +19,15 @@
 @property NSMutableArray *ingredients;
 @property ConsumableIngredient *selectedIngredient;
 
+@property (weak, nonatomic) IBOutlet UIButton *showRecipeButton;
+
 @end
 
 @implementation RecipeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.showRecipeButton.hidden = YES;
 
     //Load the grocery list Plist on this view Controller
 

@@ -11,7 +11,6 @@
 		B0E8FFA91BFA35CB00EEFE28 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFA81BFA35CB00EEFE28 /* EntryViewController.m */; };
 		B0E8FFAC1BFA3CA900EEFE28 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */; };
 		B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */; };
-		B0E8FFB41BFAA80000EEFE28 /* NutritionalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFB31BFAA80000EEFE28 /* NutritionalInformationViewController.m */; };
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
 		E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286521BF2CF42002A9C0C /* AppDelegate.m */; };
 		E0E286591BF2CF42002A9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E286571BF2CF42002A9C0C /* Main.storyboard */; };
@@ -70,8 +69,6 @@
 		B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recipe.m; sourceTree = "<group>"; };
 		B0E8FFAD1BFA479900EEFE28 /* RecipeStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeStep.h; sourceTree = "<group>"; };
 		B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStep.m; sourceTree = "<group>"; };
-		B0E8FFB21BFAA80000EEFE28 /* NutritionalInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NutritionalInformationViewController.h; path = "../../../MMA_XCode/September Cohort/Afternoon Challenges/Week 6/ToTryList-MealDetail-RecipeView/ToTryList-MealDetail-RecipeView/NutritionalInformationViewController.h"; sourceTree = "<group>"; };
-		B0E8FFB31BFAA80000EEFE28 /* NutritionalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NutritionalInformationViewController.m; path = "../../../MMA_XCode/September Cohort/Afternoon Challenges/Week 6/ToTryList-MealDetail-RecipeView/ToTryList-MealDetail-RecipeView/NutritionalInformationViewController.m"; sourceTree = "<group>"; };
 		E0E2864B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteSwipeObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E2864F1BF2CF42002A9C0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0E286511BF2CF42002A9C0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -314,8 +311,6 @@
 			children = (
 				E0E286A81BF3CB6A002A9C0C /* MealDetailViewController.h */,
 				E0E286A91BF3CB6A002A9C0C /* MealDetailViewController.m */,
-				B0E8FFB21BFAA80000EEFE28 /* NutritionalInformationViewController.h */,
-				B0E8FFB31BFAA80000EEFE28 /* NutritionalInformationViewController.m */,
 				E0E286B71BF654B2002A9C0C /* ConsumableTableViewCell.h */,
 				E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */,
 			);
@@ -512,7 +507,6 @@
 				E0E286501BF2CF42002A9C0C /* main.m in Sources */,
 				E0E2868D1BF2CFFB002A9C0C /* SwipeViewController.m in Sources */,
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
-				B0E8FFB41BFAA80000EEFE28 /* NutritionalInformationViewController.m in Sources */,
 				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
 				B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */,

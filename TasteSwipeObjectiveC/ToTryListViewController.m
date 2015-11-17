@@ -125,6 +125,7 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.selectedMeal = [self.toTryListMeals objectAtIndex:indexPath.row];
+
     
     [self performSegueWithIdentifier: @"TryToMealDetailSegue" sender:self];
     //go to meal detail view

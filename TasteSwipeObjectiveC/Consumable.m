@@ -19,6 +19,7 @@
         self.image_url = json[@"image_url"];
         self.consumableIngredients = json[@"ingredients"];
         self.consumableName = json[@"name"];
+        self.recipeID = json[@"recipe_id"];
 
     }
 

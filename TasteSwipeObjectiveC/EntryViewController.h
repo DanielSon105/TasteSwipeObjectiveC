@@ -16,6 +16,7 @@
 //@property Recipe *recipeDirections;
 @property RecipeStep *step;
 @property NSInteger page;
+@property (weak, nonatomic) IBOutlet UIImageView *recipeStepImage;
 
 -(void)loadEntry;
 

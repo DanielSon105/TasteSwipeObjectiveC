@@ -13,7 +13,7 @@
 @interface EntryViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *order;
-@property (weak, nonatomic) IBOutlet UILabel *stepDescription;
+@property (weak, nonatomic) IBOutlet UITextView *stepDescription;
 
 @end
 
@@ -26,10 +26,19 @@
 }
 
 -(void)loadEntry{
-//    ((UILabel *) [self.view viewWithTag:10]).text = self.step.order;
-//    ((UILabel *) [self.view viewWithTag:20]).text = self.step.stepDescription;
-    self.order.text = self.step.order;
-    self.stepDescription.text = self.step.stepDescription;
+    NSString *strTextView = [NSString stringWithFormat:@"Step %@: %@", self.step.order, self.step.stepDescription];
+
+    NSRange rangeBold = [strTextView rangeOfString:[NSString stringWithFormat:@"Step %@:", self.step.order]];
+
+    UIFont *fontText = [UIFont boldSystemFontOfSize:14];
+    NSDictionary *dictBoldText = [NSDictionary dictionaryWithObjectsAndKeys:fontText, NSFontAttributeName, nil];
+
+    NSMutableAttributedString *mutAttrTextViewString = [[NSMutableAttributedString alloc] initWithString:strTextView];
+    [mutAttrTextViewString setAttributes:dictBoldText range:rangeBold];
+
+//    [textViewTermsPolicy setAttributedText:mutAttrTextViewString];
+//    self.stepDescription.text = [NSString stringWithFormat:@"Step %@: %@", self.step.order, self.step.stepDescription];
+    [self.stepDescription setAttributedText:mutAttrTextViewString];
 }
 
 /*

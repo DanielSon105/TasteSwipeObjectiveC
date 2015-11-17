@@ -81,6 +81,12 @@
     return [NSURL URLWithString:url];
 }
 
+
++ (NSURL*)triedAMeal
+{
+    NSString *url = @"http://tasteswipe-int.herokuapp.com/try_meals";
+    return [NSURL URLWithString:url];
+}
 #pragma mark - backlogged URLs
 
 //Tried a Meal      POST /meal/:meal_id/tried

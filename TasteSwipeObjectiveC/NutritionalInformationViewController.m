@@ -1,22 +1,18 @@
 //
 //  NutritionalInformationViewController.m
-//  ToTryList-MealDetail-RecipeView
+//  TasteSwipeObjectiveC
 //
-//  Created by Michelle Burke on 11/10/15.
-//  Copyright © 2015 Burke-Barrido. All rights reserved.
+//  Created by Daniel Barrido on 11/16/15.
+//  Copyright © 2015 Daniel Barrido. All rights reserved.
 //
 
 #import "NutritionalInformationViewController.h"
-#import "User.h"
-#import "Consumable.h"
 
-@interface NutritionalInformationViewController () <UITextViewDelegate>
-
-@property (weak, nonatomic) IBOutlet UILabel *caloriesLabel;
-@property (weak, nonatomic) IBOutlet UILabel *carbsLabel;
-@property (weak, nonatomic) IBOutlet UILabel *proteinLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fatLabel;
-
+@interface NutritionalInformationViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *calorieInformation;
+@property (weak, nonatomic) IBOutlet UILabel *carbGrams;
+@property (weak, nonatomic) IBOutlet UILabel *proteinGrams;
+@property (weak, nonatomic) IBOutlet UILabel *fatGrams;
 
 @end
 
@@ -24,9 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Do any additional setup after loading the view.
 }
-
 
 /*
 #pragma mark - Navigation

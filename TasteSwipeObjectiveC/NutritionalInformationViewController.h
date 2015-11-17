@@ -1,9 +1,9 @@
 //
 //  NutritionalInformationViewController.h
-//  ToTryList-MealDetail-RecipeView
+//  TasteSwipeObjectiveC
 //
-//  Created by Michelle Burke on 11/10/15.
-//  Copyright © 2015 Burke-Barrido. All rights reserved.
+//  Created by Daniel Barrido on 11/16/15.
+//  Copyright © 2015 Daniel Barrido. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

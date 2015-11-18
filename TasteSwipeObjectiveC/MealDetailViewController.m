@@ -75,10 +75,10 @@
         RecipeViewController *rvc = [recipeNavigationController.childViewControllers objectAtIndex:0];
         NSLog(@"%@", recipeNavigationController.childViewControllers);
         rvc.consumable = self.selectedConsumable;
-        NSLog(@"%@", self.selectedConsumable.recipeID);
-        if (self.selectedConsumable.recipeID == NULL) {
-            rvc.hasRecipeID = YES;
-        }
+//        NSLog(@"%@", self.selectedConsumable.recipeID);
+//        if (self.selectedConsumable.recipeID == NULL) {
+//            rvc.hasRecipeID = YES;
+//        }
     }
 
 }

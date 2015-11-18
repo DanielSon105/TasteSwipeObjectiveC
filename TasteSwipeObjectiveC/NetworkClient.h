@@ -15,5 +15,6 @@
 
 //+(NSString*)apiAuthorizationHeader;
 - (NSArray *)loadGroceryListFromCache;
+- (void)saveGroceryListToCache:(NSArray *)groceries;
 
 @end

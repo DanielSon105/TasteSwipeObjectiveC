@@ -8,6 +8,7 @@
 
 #import "SwipeViewController.h"
 #import "SwipedCardBackgroundView.h"
+#import "NetworkClient.h"
 
 @interface SwipeViewController ()
 
@@ -18,6 +19,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSArray *arrayBlah = [NSArray new];
+    NetworkClient *nc = [NetworkClient new];
+    [nc saveGroceryListToCache:arrayBlah];
+
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
 
     NSLog(@"NSUserDefaults value for accessToken key --> %@", accessToken);

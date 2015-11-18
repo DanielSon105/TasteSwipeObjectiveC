@@ -9,12 +9,17 @@
 #import <Foundation/Foundation.h>
 
 @interface Consumable : NSObject
-@property NSString * consumableDescription;
-@property NSString * consumable_id;
+
+@property NSString * consumable_id;@property NSString * consumableDescription;
+
 @property NSString * image_url;
 @property NSArray * consumableIngredients;
 @property NSString * consumableName;
 @property NSString * recipeID;
+
+
+
+
 
 -(instancetype)initConsumableWithJSON:(NSDictionary *)json;
 

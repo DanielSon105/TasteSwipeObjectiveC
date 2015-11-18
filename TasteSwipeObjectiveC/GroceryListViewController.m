@@ -13,6 +13,7 @@
 @interface GroceryListViewController () <UITabBarDelegate, UITableViewDataSource>
 @property NetworkClient *networkClient;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property NSMutableArray *groceryListItems;
 
 
 
@@ -24,14 +25,38 @@
     [super viewDidLoad];
     self.networkClient = [NetworkClient new];
     self.groceries = [self.networkClient loadGroceryListFromCache];
-    NSLog(@"%@",self.groceries);
+//    [self load];
+    NSLog(@"Groceries --> %@",self.groceries);
+    NSLog(@"Grocery List Items ---> %@", self.groceryListItems);
     //Load the grocery list Plist on this view Controller
 
 //    [self loadData];
 }
+-(NSURL *)documentsDirectory {
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
+
+}
+
+-(void)save {
+    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"GroceryList.plist"];
+    [self.groceryListItems writeToURL:pList atomically:YES];
+    NSLog(@"%@", pList);
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:[NSDate date] forKey:@"LastWriteDate"];
+}
+//
+//-(void)load {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"GroceryList.plist"];
+//    self.groceryListItems = [NSMutableArray arrayWithContentsOfURL:pList];
+//}
+
+
 
 - (void)loadData {
-    self.groceries = [self.networkClient loadGroceryListFromCache]; //need to update logic in NetworkClient.h/m  ... and this is dependent on 1) the user.. (indirectly....basically, if a different user logs on to the app, the current Plist has to be erased....) 2) adding something from the Consumables VC.
+    self.groceries = [self.networkClient loadGroceryListFromCache];
+
+    NSLog(@"%@", self.groceries);
+    //need to update logic in NetworkClient.h/m  ... and this is dependent on 1) the user.. (indirectly....basically, if a different user logs on to the app, the current Plist has to be erased....) 2) adding something from the Consumables VC.
 }
 
 #pragma mark - Tableview Delegate Methods
@@ -42,9 +67,10 @@
 
 -(GroceryListItemTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GroceryListItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroceryListItemTableViewCell"];
-        cell.groceryListItem = [self.groceries objectAtIndex:indexPath.row];
+
+    cell.groceryListItem = [self.groceries objectAtIndex:indexPath.row];
     cell.textLabel.text = cell.groceryListItem.ingredient;
-    cell.detailTextLabel.text = cell.groceryListItem.amount;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Amount: %@ Unit of Measurement: %@", cell.groceryListItem.amount, cell.groceryListItem.unitOfMeasurement];
     return cell;
 
 }

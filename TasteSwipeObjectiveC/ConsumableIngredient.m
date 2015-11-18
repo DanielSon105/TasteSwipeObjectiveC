@@ -14,10 +14,13 @@
     self = [super init];
 
     if (self) {
+        self.amount = json[@"amount"];
+        self.unitOfMeasurement = json[@"unit"];
+        self.ingredientDictionary = json[@"ingredient"];
+        self.ingredientID = json[@"ingredient"][@"id"];
+        self.ingredientName = json[@"ingredient"][@"name"];
         self.ingredientDescription = json[@"description"];
-        self.ingredientID = json[@"id"];
-        self.imageURL = json[@"image_url"];
-        self.ingredientName = json[@"name"];
+        self.imageURL = json[@"ingredient"][@"image_url"];
     }
 
     return self;

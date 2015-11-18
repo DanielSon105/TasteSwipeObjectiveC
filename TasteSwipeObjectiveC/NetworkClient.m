@@ -120,20 +120,21 @@
     return nil;
 }
 
+
 - (void)saveGroceryListToCache:(NSArray *)groceries {
     NSString *documentsDirectory = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, true) objectAtIndex:0];
     NSString *path = [documentsDirectory stringByAppendingPathComponent:@"GroceryList.plist"];
 
-    NSMutableArray *groceryListArray = [NSMutableArray new];
-    for (GroceryListItem *item in groceries) {
-        NSMutableDictionary *d = [NSMutableDictionary new];
-        d[@"name"] = item.ingredient;
-        d[@"amount"] = item.amount;
-        d[@"unitOfMeasurement"] = item.unitOfMeasurement;
-        [groceryListArray addObject:d];
-    }
-
-    [groceryListArray writeToFile:path atomically:true];
+//    NSMutableArray *groceryListArray = [NSMutableArray arrayWithArray:groceries];
+//    for (Dictionary *d in groceries) {
+//        NSMutableDictionary *d = [NSMutableDictionary new];
+//        d[@"name"] = item.ingredient;
+//        d[@"amount"] = item.amount;
+//        d[@"unitOfMeasurement"] = item.unitOfMeasurement;
+//        [groceryListArray addObject:d];
+//    }
+    [groceries writeToFile:path atomically:true];
+//    [groceryListArray writeToFile:path atomically:true];
 }
 
 #pragma mark - Currently basically a copy and paste job from SuperHeropedia that is halfway converted to Something Useful for Taste Swipe :-)

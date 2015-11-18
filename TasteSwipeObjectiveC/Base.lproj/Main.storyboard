@@ -672,6 +672,9 @@
                                                             <include reference="ixa-O3-22U"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="onAddToGroceryListButtonTapped:" destination="4Ek-01-mvp" eventType="touchUpInside" id="2Qc-lH-K6R"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <animations/>

@@ -9,12 +9,20 @@
 #import <Foundation/Foundation.h>
 
 @interface ConsumableIngredient : NSObject
-@property NSString *ingredientDescription;
+@property NSString *amount;
+@property NSString *unitOfMeasurement;
+
+@property NSDictionary *ingredientDictionary;
+
 @property NSString *ingredientID;
-@property NSString *imageURL;
 @property NSString *ingredientName;
+@property NSString *ingredientDescription;
+@property NSString *imageURL;
+
+@property BOOL addedToCart;
 
 -(instancetype)initConsumableIngredientWithJSON:(NSDictionary *)json;
+
 
 
 //description STRING    ****** use this and change to unit of measurement after charlie updates

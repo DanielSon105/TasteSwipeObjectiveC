@@ -19,9 +19,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSArray *arrayBlah = [NSArray new];
-//    NetworkClient *nc = [NetworkClient new];
-//    [nc saveGroceryListToCache:arrayBlah];
+    NSArray *arrayBlah = [NSArray new];
+    NetworkClient *nc = [NetworkClient new];
+    [nc saveGroceryListToCache:arrayBlah];
 
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
 

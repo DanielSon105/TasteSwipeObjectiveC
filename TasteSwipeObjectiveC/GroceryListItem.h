@@ -9,7 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface GroceryListItem : NSObject
-@property NSInteger *groceryListItemID;
+@property NSNumber *groceryListItemID;
+
 @property NSString *ingredient;
 @property NSString *amount;
 @property NSString *unitOfMeasurement;

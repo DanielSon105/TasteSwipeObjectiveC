@@ -90,7 +90,7 @@
 
         }];
         UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Blue" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            //        [self.moc save:nil];
+
         }];
         [alertController addAction:addToGroceryList];
         [alertController addAction:cancel];
@@ -110,11 +110,23 @@
 
             self.selectedIngredient.addedToCart = YES;
 
-            NSLog(@"%@ %@ %@", self.selectedIngredient.ingredientName, self.selectedIngredient.amount, self.selectedIngredient.unitOfMeasurement);
-            self.selectedIngredient.unitOfMeasurement = @"pounds";
-            self.selectedIngredient.amount = @"5";
+            NSLog(@"Selected Ingredient: %@, Amount: %@, Unit of Measurement: %@",self.selectedIngredient.ingredientName, self.selectedIngredient.amount, self.selectedIngredient.unitOfMeasurement);
+
+            if ([self.selectedIngredient.unitOfMeasurement isEqual:[NSNull null]]) {
+                self.selectedIngredient.unitOfMeasurement = @"N/A";
+            }
+            
+            if ([self.selectedIngredient.amount isEqual:[NSNull null]]) {
+                self.selectedIngredient.amount = @"N/A";
+            }
+
+            NSLog(@"Selected Ingredient: %@, Amount: %@, Unit of Measurement: %@",self.selectedIngredient.ingredientName, self.selectedIngredient.amount, self.selectedIngredient.unitOfMeasurement);
+
 #warning using placeholder for amount and unit of measurement right now so change after Charlie uploads real data {
-            NSDictionary *tmpDict = [[NSDictionary alloc] initWithObjectsAndKeys:self.selectedIngredient.ingredientName, @"ingredient", self.selectedIngredient.amount, @"amount", self.selectedIngredient.unitOfMeasurement, @"unitOfMeasurement", nil];
+
+
+            //Only Solution is that you have to check all the NULL Values and Replace it with @" "
+            NSDictionary *tmpDict = [[NSDictionary alloc] initWithObjectsAndKeys:self.selectedIngredient.ingredientName, @"ingredient", self.selectedIngredient.amount, @"amount", self.selectedIngredient.unitOfMeasurement, @"unit", nil];
 #warning blah }
             [self.groceryListItems addObject:tmpDict];
             dispatch_after(0.2, dispatch_get_main_queue(), ^{

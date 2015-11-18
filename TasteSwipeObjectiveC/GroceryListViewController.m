@@ -44,11 +44,11 @@
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:[NSDate date] forKey:@"LastWriteDate"];
 }
-
--(void)load {
-    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"GroceryList.plist"];
-    self.groceryListItems = [NSMutableArray arrayWithContentsOfURL:pList];
-}
+//
+//-(void)load {
+//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"GroceryList.plist"];
+//    self.groceryListItems = [NSMutableArray arrayWithContentsOfURL:pList];
+//}
 
 
 
@@ -70,7 +70,7 @@
 
     cell.groceryListItem = [self.groceries objectAtIndex:indexPath.row];
     cell.textLabel.text = cell.groceryListItem.ingredient;
-    cell.detailTextLabel.text = cell.groceryListItem.amount;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"Amount: %@ Unit of Measurement: %@", cell.groceryListItem.amount, cell.groceryListItem.unitOfMeasurement];
     return cell;
 
 }

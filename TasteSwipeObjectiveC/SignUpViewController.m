@@ -7,6 +7,7 @@
 //
 
 #import "SignUpViewController.h"
+#import "WelcomeViewController.h"
 
 @interface SignUpViewController () <UIGestureRecognizerDelegate>
 
@@ -71,9 +72,8 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
                     NSLog(@"%@", text);
+                    [self performSegueWithIdentifier:@"unwindToWelcome" sender:self];
 
-
-                    //set u
                 });
 
             } else {
@@ -89,6 +89,8 @@
     [postDataTask resume];
     
 }
+
+
 
 
 

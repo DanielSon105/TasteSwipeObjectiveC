@@ -9,6 +9,7 @@
 #import "WelcomeViewController.h"
 #import "SwipeViewController.h"
 
+
 @interface WelcomeViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *credentialsErrorLabel;
@@ -126,5 +127,14 @@
         swc.user = self.user;
     }
 }
+
+#pragma mark - Unwind To Welcome Segue
+
+- (IBAction)unwindToWelcomeVC:(UIStoryboardSegue *)unwindSegue
+{
+    //maybe pass on successful user email and pass here
+}
+
+
 
 @end

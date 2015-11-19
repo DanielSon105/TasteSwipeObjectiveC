@@ -181,6 +181,16 @@
                                     <rect key="frame" x="121" y="310" width="157" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-aN-C7F">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Back to Sign In"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="155" y="401" width="102" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="5W4-dy-bXY" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcomeVC:" id="Szk-PX-6Ze"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -190,6 +200,7 @@
                                 <exclude reference="e8I-5I-xAN"/>
                                 <exclude reference="9hz-8S-Wji"/>
                                 <exclude reference="V2g-iO-U4T"/>
+                                <exclude reference="Kqr-aN-C7F"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -198,6 +209,7 @@
                                 <include reference="e8I-5I-xAN"/>
                                 <include reference="9hz-8S-Wji"/>
                                 <include reference="V2g-iO-U4T"/>
+                                <include reference="Kqr-aN-C7F"/>
                             </mask>
                         </variation>
                     </view>
@@ -205,12 +217,11 @@
                         <outlet property="emailTextField" destination="e8I-5I-xAN" id="Kik-nd-66e"/>
                         <outlet property="passwordConfirmationTextField" destination="V2g-iO-U4T" id="dEJ-WI-dhW"/>
                         <outlet property="passwordTextField" destination="9hz-8S-Wji" id="IlA-BZ-3C0"/>
-                        <segue destination="8N0-cY-Qhi" kind="show" identifier="BackToWelcomeView" id="VcB-Dj-5JS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaQ-Fa-zva" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1948.5" y="-374"/>
+            <point key="canvasLocation" x="1666.5" y="-380"/>
         </scene>
         <!--Nutritional Information View Controller-->
         <scene sceneID="oUd-ql-TjD">
@@ -416,6 +427,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <animations/>
                                 <state key="normal" title="Swipe"/>
+                                <connections>
+                                    <segue destination="qxg-0D-NfD" kind="show" id="csl-Yu-hDZ"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
@@ -1555,6 +1569,7 @@
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9j-3u-itI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="5W4-dy-bXY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="190.5" y="387"/>
         </scene>
@@ -1684,4 +1699,7 @@
         <image name="shopping_cart" width="25" height="25"/>
         <image name="star" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="csl-Yu-hDZ"/>
+    </inferredMetricsTieBreakers>
 </document>

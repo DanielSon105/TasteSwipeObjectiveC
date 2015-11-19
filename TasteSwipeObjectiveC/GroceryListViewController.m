@@ -25,12 +25,17 @@
     [super viewDidLoad];
     self.networkClient = [NetworkClient new];
     self.groceries = [self.networkClient loadGroceryListFromCache];
+    self.groceryListItems = [NSMutableArray new];
+    for (NSDictionary *dict in self.groceries) {
+        GroceryListItem *item = [[GroceryListItem alloc] initWithJSON:dict];
+        [self.groceryListItems addObject:item];
+    }
 //    [self load];
     NSLog(@"Groceries --> %@",self.groceries);
     NSLog(@"Grocery List Items ---> %@", self.groceryListItems);
     //Load the grocery list Plist on this view Controller
 
-//    [self loadData];
+    [self loadData];
 }
 -(NSURL *)documentsDirectory {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
@@ -54,21 +59,21 @@
 
 - (void)loadData {
     self.groceries = [self.networkClient loadGroceryListFromCache];
+    NSLog(@"******Looking for items !!!!!!!!");
 
-    NSLog(@"%@", self.groceries);
     //need to update logic in NetworkClient.h/m  ... and this is dependent on 1) the user.. (indirectly....basically, if a different user logs on to the app, the current Plist has to be erased....) 2) adding something from the Consumables VC.
 }
 
 #pragma mark - Tableview Delegate Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.groceries.count;
+    return self.groceryListItems.count;
 }
 
 -(GroceryListItemTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     GroceryListItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GroceryListItemTableViewCell"];
 
-    cell.groceryListItem = [self.groceries objectAtIndex:indexPath.row];
+    cell.groceryListItem = [self.groceryListItems objectAtIndex:indexPath.row];
     cell.textLabel.text = cell.groceryListItem.ingredient;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Amount: %@ Unit of Measurement: %@", cell.groceryListItem.amount, cell.groceryListItem.unitOfMeasurement];
     return cell;

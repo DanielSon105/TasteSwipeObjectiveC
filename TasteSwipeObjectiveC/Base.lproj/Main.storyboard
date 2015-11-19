@@ -1085,7 +1085,7 @@
                     <navigationItem key="navigationItem" id="sDS-8t-res">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="68r-w8-2BI">
                             <connections>
-                                <action selector="onBackButtonTapped:" destination="6EL-Rx-cv1" id="V25-WU-sxB"/>
+                                <segue destination="zL9-N5-dAl" kind="unwind" unwindAction="unwindToMealDetailSegue:" id="adK-y2-SCO"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Grocery List" id="HV0-kO-CAj">
@@ -1102,8 +1102,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gK-Ue-H7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="zL9-N5-dAl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5079" y="1103"/>
+            <point key="canvasLocation" x="5101.5" y="1094"/>
         </scene>
         <!--Recipe Cooking View Controller-->
         <scene sceneID="5fO-4S-TAL">

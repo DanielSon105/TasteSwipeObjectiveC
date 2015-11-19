@@ -125,21 +125,23 @@
 
             NSLog(@"Selected Ingredient: %@, Amount: %@, Unit of Measurement: %@",self.selectedIngredient.ingredientName, self.selectedIngredient.amount, self.selectedIngredient.unitOfMeasurement);
 
-#warning using placeholder for amount and unit of measurement right now so change after Charlie uploads real data {
+
 
 
             //Only Solution is that you have to check all the NULL Values and Replace it with @" "
+
             NSDictionary *tmpDict = [[NSDictionary alloc] initWithObjectsAndKeys:self.selectedIngredient.ingredientName, @"ingredient", self.selectedIngredient.amount, @"amount", self.selectedIngredient.unitOfMeasurement, @"unit", nil];
-#warning blah }
+
+//            GroceryListItem *addedItem = [[GroceryListItem alloc] initWithJSON:tmpDict];
             [self.groceryListItems addObject:tmpDict];
             dispatch_after(0.2, dispatch_get_main_queue(), ^{
-                [self save];
+//                [self save];
+                NSArray *tmpArray = [NSArray arrayWithArray:self.groceryListItems];
+                [self.networkClient saveGroceryListToCache:tmpArray];
+                NSLog(@"******done adding something to the list!!!!!!!!!");
             });
 
-//            NSArray *tmpArray = [NSArray arrayWithArray:self.groceryListItems];
-
-
-//            [self.networkClient saveGroceryListToCache:tmpArray];
+//
 
             //Anticipated Issue: Arrays cannot take in 2 of the same object, so we need to essentially ID the object based on its array Index
 
@@ -167,9 +169,9 @@
 - (IBAction)onViewRecipeButtonTapped:(id)sender {
     [self performSegueWithIdentifier:@"RecipeToStepsSegue" sender:self];
 }
-- (IBAction)onBackButtonTapped:(id)sender {
-    [self performSegueWithIdentifier: @"RecipeToMealDetailSegue" sender:self];
-}
+//- (IBAction)onBackButtonTapped:(id)sender {
+//    [self performSegueWithIdentifier: @"RecipeToMealDetailSegue" sender:self];
+//}
 
 #pragma mark - grocery list cache management
 

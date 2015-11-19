@@ -108,13 +108,13 @@
 
     if ([fileManager fileExistsAtPath:path]) {
         NSArray * groceries = [[NSArray alloc] initWithContentsOfFile:path];
-        NSMutableArray *groceryListArray = [NSMutableArray new];
-        for (NSDictionary *json in groceries) {
-            GroceryListItem *item = [[GroceryListItem alloc] initWithJSON:json]; //
-            [groceryListArray addObject:item];
-        }
+//        NSMutableArray *groceryListArray = [NSMutableArray new];
+//        for (NSDictionary *json in groceries) {
+//            GroceryListItem *item = [[GroceryListItem alloc] initWithJSON:json]; //
+//            [groceryListArray addObject:item];
+//        }
 
-        return groceryListArray;
+        return groceries;
     }
 
     return nil;

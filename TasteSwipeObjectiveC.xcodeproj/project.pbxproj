@@ -13,6 +13,8 @@
 		B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */; };
 		E081A1891BFAE2FD003FED9C /* NutritionalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */; };
 		E081A18C1BFD1BF3003FED9C /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */; };
+		E0AF5C1E1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF5C1D1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m */; };
+		E0AF5C211BFD6E250056BEAA /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF5C201BFD6E250056BEAA /* CommentTableViewCell.m */; };
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
 		E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286521BF2CF42002A9C0C /* AppDelegate.m */; };
 		E0E286591BF2CF42002A9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E286571BF2CF42002A9C0C /* Main.storyboard */; };
@@ -75,6 +77,10 @@
 		E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionalInformationViewController.m; sourceTree = "<group>"; };
 		E081A18A1BFD1BF3003FED9C /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
 		E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
+		E0AF5C1C1BFD6B3C0056BEAA /* MealDetailScrollingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealDetailScrollingViewController.h; sourceTree = "<group>"; };
+		E0AF5C1D1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealDetailScrollingViewController.m; sourceTree = "<group>"; };
+		E0AF5C1F1BFD6E250056BEAA /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
+		E0AF5C201BFD6E250056BEAA /* CommentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentTableViewCell.m; sourceTree = "<group>"; };
 		E0E2864B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteSwipeObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E2864F1BF2CF42002A9C0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0E286511BF2CF42002A9C0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -323,6 +329,10 @@
 				E0E286B81BF654B2002A9C0C /* ConsumableTableViewCell.m */,
 				E081A1871BFAE2FD003FED9C /* NutritionalInformationViewController.h */,
 				E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */,
+				E0AF5C1C1BFD6B3C0056BEAA /* MealDetailScrollingViewController.h */,
+				E0AF5C1D1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m */,
+				E0AF5C1F1BFD6E250056BEAA /* CommentTableViewCell.h */,
+				E0AF5C201BFD6E250056BEAA /* CommentTableViewCell.m */,
 			);
 			name = MealDetailVC;
 			sourceTree = "<group>";
@@ -520,6 +530,8 @@
 				E0E286941BF2D071002A9C0C /* SignUpViewController.m in Sources */,
 				E081A1891BFAE2FD003FED9C /* NutritionalInformationViewController.m in Sources */,
 				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
+				E0AF5C211BFD6E250056BEAA /* CommentTableViewCell.m in Sources */,
+				E0AF5C1E1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
 				B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */,
 				E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */,

@@ -58,7 +58,7 @@
     cell.consumableIngredient = [self.ingredients objectAtIndex:indexPath.row];
 
     cell.customMainLabel.text = cell.consumableIngredient.ingredientName;
-    cell.customDetailLabel.text = [NSString stringWithFormat:@"Amount: %@ %@", cell.consumableIngredient.ingredientID, cell.consumableIngredient.ingredientDescription];
+    cell.customDetailLabel.text = [NSString stringWithFormat:@"Amount Needed For 1 Serving:%@ %@", cell.consumableIngredient.amount, cell.consumableIngredient.unitOfMeasurement];
 
     cell.groceryListButton.tag = indexPath.row;
     [cell.groceryListButton addTarget:self action:@selector(onGroceryListButtonTapped:) forControlEvents:UIControlEventTouchUpInside];

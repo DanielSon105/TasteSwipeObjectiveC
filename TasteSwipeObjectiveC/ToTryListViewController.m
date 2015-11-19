@@ -8,6 +8,7 @@
 
 #import "ToTryListViewController.h"
 #import "MealDetailViewController.h"
+#import "MealDetailScrollingViewController.h"
 #import "NetworkClient.h"
 
 @interface ToTryListViewController () <UITableViewDataSource, UITableViewDelegate>
@@ -68,9 +69,7 @@
     [NSURLSessionConfiguration defaultSessionConfiguration];
 
     NSURLSession *session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
-
     NSURL *url = [NSURL URLWithString:@"http://tasteswipe-int.herokuapp.com/try_meals"];
-
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
 
     [request setValue:@"application/json; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
@@ -127,6 +126,7 @@
     self.selectedMeal = [self.toTryListMeals objectAtIndex:indexPath.row];
 
     
+//    [self performSegueWithIdentifier: @"TryToMealDetailSegue" sender:self];
     [self performSegueWithIdentifier: @"TryToMealDetailSegue" sender:self];
     //go to meal detail view
 }
@@ -136,8 +136,11 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     if ([segue.identifier isEqual: @"TryToMealDetailSegue"]) {
         MealDetailViewController *mdvc = segue.destinationViewController;
-
         mdvc.meal = self.selectedMeal;
+    }
+    if ([segue.identifier isEqual:@"TryToScrollingMealDetailSegue"]) {
+        MealDetailScrollingViewController *mdsvc = segue.destinationViewController;
+        mdsvc.meal = self.selectedMeal;
     }
 }
 

@@ -69,8 +69,6 @@
 //       RecipeViewController *rvc = segue.destinationViewController;
 
 
-
-
         UINavigationController *recipeNavigationController = segue.destinationViewController;
         RecipeViewController *rvc = [recipeNavigationController.childViewControllers objectAtIndex:0];
         NSLog(@"%@", recipeNavigationController.childViewControllers);

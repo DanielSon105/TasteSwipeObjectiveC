@@ -27,7 +27,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="123" y="155" width="155" height="221"/>
+                                    <rect key="frame" x="50" y="156" width="300" height="202"/>
                                 </variation>
                             </view>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JlA-EW-gPl">
@@ -36,16 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="136" y="179" width="128" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-nq-sbR">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="136" y="234" width="128" height="30"/>
+                                    <rect key="frame" x="58" y="179" width="284" height="30"/>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLk-gh-Coe">
@@ -75,6 +66,15 @@
                                     <segue destination="XEY-8i-ksD" kind="presentation" id="6Gq-48-wFY"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gxj-nq-sbR">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="58" y="234" width="284" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -91,9 +91,9 @@
                                 <exclude reference="5Ul-3u-Sdo"/>
                                 <exclude reference="2tW-N0-Ijg"/>
                                 <exclude reference="JlA-EW-gPl"/>
-                                <exclude reference="gxj-nq-sbR"/>
                                 <exclude reference="fLk-gh-Coe"/>
                                 <exclude reference="XTA-pw-qG9"/>
+                                <exclude reference="gxj-nq-sbR"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="EGU-sU-B1z"/>
@@ -107,9 +107,9 @@
                                 <include reference="5Ul-3u-Sdo"/>
                                 <include reference="2tW-N0-Ijg"/>
                                 <include reference="JlA-EW-gPl"/>
-                                <include reference="gxj-nq-sbR"/>
                                 <include reference="fLk-gh-Coe"/>
                                 <include reference="XTA-pw-qG9"/>
+                                <include reference="gxj-nq-sbR"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="EGU-sU-B1z"/>
@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="925.5" y="387"/>
+            <point key="canvasLocation" x="925" y="387"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="ut0-zc-Dj6">
@@ -2246,6 +2246,6 @@
         <image name="star" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="csl-Yu-hDZ"/>
+        <segue reference="j2a-fh-Zkm"/>
     </inferredMetricsTieBreakers>
 </document>

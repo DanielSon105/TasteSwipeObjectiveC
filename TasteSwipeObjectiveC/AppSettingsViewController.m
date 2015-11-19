@@ -75,7 +75,7 @@
                     });
 
                 } else {
-                    NSLog(@"shit didn't work");
+                    NSLog(@"token was not deleted");
                     NSLog(@"%ld", (long)httpResp.statusCode);
                     // HANDLE BAD RESPONSE //
                 }

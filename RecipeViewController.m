@@ -100,11 +100,11 @@
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"You have chosen to add this ingredient to your list!" message:nil preferredStyle:UIAlertControllerStyleAlert];
         UIAlertAction *addToGroceryList = [UIAlertAction actionWithTitle:@"Add To Grocery List" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
 
-            [self load];
+//            [self load];
 
             senderButton.imageView.image = [UIImage imageNamed:@"shopping_cart_loaded"];
 
-//            self.groceryListItems = [NSMutableArray arrayWithArray:[self.networkClient loadGroceryListFromCache]];
+            self.groceryListItems = [NSMutableArray arrayWithArray:[self.networkClient loadGroceryListFromCache]];
 
             NSLog(@"self.groceryListItems BEFORE--> %@", self.groceryListItems);
 

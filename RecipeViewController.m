@@ -32,7 +32,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.showRecipeButton.hidden = YES;
+//    self.showRecipeButton.hidden = YES;
     self.networkClient = [NetworkClient new];
 
     //Load the grocery list Plist on this view Controller...I think needs to be done on adding G-List though... moving it right now

@@ -13,6 +13,7 @@
 		B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */; };
 		E081A1891BFAE2FD003FED9C /* NutritionalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */; };
 		E081A18C1BFD1BF3003FED9C /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */; };
+		E0970FBA1BFDC7410031793E /* StarRatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = E0970FB91BFDC7410031793E /* StarRatingButton.m */; };
 		E0AF5C1E1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF5C1D1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m */; };
 		E0AF5C211BFD6E250056BEAA /* CommentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AF5C201BFD6E250056BEAA /* CommentTableViewCell.m */; };
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
@@ -77,6 +78,8 @@
 		E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionalInformationViewController.m; sourceTree = "<group>"; };
 		E081A18A1BFD1BF3003FED9C /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
 		E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
+		E0970FB81BFDC7410031793E /* StarRatingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarRatingButton.h; sourceTree = "<group>"; };
+		E0970FB91BFDC7410031793E /* StarRatingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarRatingButton.m; sourceTree = "<group>"; };
 		E0AF5C1C1BFD6B3C0056BEAA /* MealDetailScrollingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MealDetailScrollingViewController.h; sourceTree = "<group>"; };
 		E0AF5C1D1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MealDetailScrollingViewController.m; sourceTree = "<group>"; };
 		E0AF5C1F1BFD6E250056BEAA /* CommentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentTableViewCell.h; sourceTree = "<group>"; };
@@ -266,6 +269,8 @@
 				B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */,
 				B0E8FFAD1BFA479900EEFE28 /* RecipeStep.h */,
 				B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */,
+				E0970FB81BFDC7410031793E /* StarRatingButton.h */,
+				E0970FB91BFDC7410031793E /* StarRatingButton.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -532,6 +537,7 @@
 				E0E286D21BF9A5BA002A9C0C /* SettingsViewController.m in Sources */,
 				E0AF5C211BFD6E250056BEAA /* CommentTableViewCell.m in Sources */,
 				E0AF5C1E1BFD6B3C0056BEAA /* MealDetailScrollingViewController.m in Sources */,
+				E0970FBA1BFDC7410031793E /* StarRatingButton.m in Sources */,
 				E0E286A61BF3CB19002A9C0C /* GroceryListViewController.m in Sources */,
 				B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */,
 				E0E286AE1BF3CCA7002A9C0C /* RecipeViewController.m in Sources */,

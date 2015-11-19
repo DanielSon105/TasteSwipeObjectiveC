@@ -12,6 +12,7 @@
 		B0E8FFAC1BFA3CA900EEFE28 /* Recipe.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAB1BFA3CA900EEFE28 /* Recipe.m */; };
 		B0E8FFAF1BFA479900EEFE28 /* RecipeStep.m in Sources */ = {isa = PBXBuildFile; fileRef = B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */; };
 		E081A1891BFAE2FD003FED9C /* NutritionalInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */; };
+		E081A18C1BFD1BF3003FED9C /* CustomActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */; };
 		E0E286501BF2CF42002A9C0C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E2864F1BF2CF42002A9C0C /* main.m */; };
 		E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E0E286521BF2CF42002A9C0C /* AppDelegate.m */; };
 		E0E286591BF2CF42002A9C0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E286571BF2CF42002A9C0C /* Main.storyboard */; };
@@ -72,6 +73,8 @@
 		B0E8FFAE1BFA479900EEFE28 /* RecipeStep.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeStep.m; sourceTree = "<group>"; };
 		E081A1871BFAE2FD003FED9C /* NutritionalInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NutritionalInformationViewController.h; sourceTree = "<group>"; };
 		E081A1881BFAE2FD003FED9C /* NutritionalInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NutritionalInformationViewController.m; sourceTree = "<group>"; };
+		E081A18A1BFD1BF3003FED9C /* CustomActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomActivityIndicator.h; sourceTree = "<group>"; };
+		E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomActivityIndicator.m; sourceTree = "<group>"; };
 		E0E2864B1BF2CF42002A9C0C /* TasteSwipeObjectiveC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TasteSwipeObjectiveC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E2864F1BF2CF42002A9C0C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E0E286511BF2CF42002A9C0C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -294,6 +297,8 @@
 				E0E2869C1BF2E05C002A9C0C /* SwipedCardView.m */,
 				E0E2869E1BF2E06F002A9C0C /* OverlayView.h */,
 				E0E2869F1BF2E06F002A9C0C /* OverlayView.m */,
+				E081A18A1BFD1BF3003FED9C /* CustomActivityIndicator.h */,
+				E081A18B1BFD1BF3003FED9C /* CustomActivityIndicator.m */,
 			);
 			name = SwipeVC;
 			sourceTree = "<group>";
@@ -503,6 +508,7 @@
 				E0E2865C1BF2CF42002A9C0C /* TasteSwipeObjectiveC.xcdatamodeld in Sources */,
 				E0E286891BF2CF8C002A9C0C /* User.m in Sources */,
 				B0E8FFAC1BFA3CA900EEFE28 /* Recipe.m in Sources */,
+				E081A18C1BFD1BF3003FED9C /* CustomActivityIndicator.m in Sources */,
 				E0E286531BF2CF42002A9C0C /* AppDelegate.m in Sources */,
 				E0E286911BF2D04C002A9C0C /* WelcomeViewController.m in Sources */,
 				E0E286CF1BF9A593002A9C0C /* AppSettingsViewController.m in Sources */,

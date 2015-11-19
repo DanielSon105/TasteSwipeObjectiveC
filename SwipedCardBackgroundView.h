@@ -10,6 +10,7 @@
 #import "SwipedCardView.h"
 #import "User.h"
 #import "Meal.h"
+#import "CustomActivityIndicator.h"
 
 @interface SwipedCardBackgroundView : UIView <SwipedCardViewDelegate>
 
@@ -23,5 +24,9 @@
 @property (retain,nonatomic)NSMutableArray* allCards; //%%% the labels the cards
 
 @property User *user;
+
+@property CustomActivityIndicator *customActivityIndicator; //This is just a setting file, not the actual image
+@property UIImageView *activityIndicatorImageView;
+@property UILabel *loadingMealsLabel;
 
 @end

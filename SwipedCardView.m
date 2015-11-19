@@ -51,7 +51,9 @@
 //        self.mealImage.backgroundColor = [UIColor orangeColor];
 //        UIImage *scaledMealImage = [UIImage initWithCGImage:mealImage.image scale:((mealImage.image.size.height/mealImage.frame.size.height),(mealImage.image.size.width/mealImage.frame.size.width)) orientation:UIImageOrientationUp;
 
-        self.backgroundColor = [UIColor whiteColor];
+//        self.backgroundColor = [UIColor colorWithRed:0.21 green:0.78 blue:0.96 alpha:1.00];
+        self.backgroundColor = [UIColor colorWithRed:0.65 green:0.67 blue:0.76 alpha:1];
+//        self.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"TasteSwipe"]];
 
         panGestureRecognizer = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(beingDragged:)];
 

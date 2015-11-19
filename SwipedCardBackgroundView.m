@@ -73,10 +73,14 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
             arrayOfMealDictionaries = [getMealDictionaryJSON objectForKey:@"meals"];
 //            NSLog(@"%@",arrayOfMealDictionaries);
             self.randomJSONMeals = [NSMutableArray new];
+            //BEGIN ACTIVITY INDICATOR
+
             for (NSDictionary *dict in arrayOfMealDictionaries) {
                 Meal *meal = [[Meal alloc] initMealWithContentsOfDictionary:dict];
                 [self.randomJSONMeals addObject:meal];
             }
+            //END ACTIVITY INDICATOR
+            [self.activityIndicatorImageView.layer removeAllAnimations];
             loadedCards = [[NSMutableArray alloc] init];
             allCards = [[NSMutableArray alloc] init];
             cardsLoadedIndex = 0;
@@ -94,21 +98,33 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
 //%%% sets up the extra buttons on the screen
 -(void)setupView
 {
-    self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
-    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
-    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
-    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
-    [messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
-    xButton = [[UIButton alloc]initWithFrame:CGRectMake(60, 485, 59, 59)];
+//    self.backgroundColor = [UIColor colorWithRed:.92 green:.93 blue:.95 alpha:1]; //the gray background colors
+//    menuButton = [[UIButton alloc]initWithFrame:CGRectMake(17, 34, 22, 15)];
+//    [menuButton setImage:[UIImage imageNamed:@"menuButton"] forState:UIControlStateNormal];
+//    messageButton = [[UIButton alloc]initWithFrame:CGRectMake(284, 34, 18, 18)];
+//    [messageButton setImage:[UIImage imageNamed:@"messageButton"] forState:UIControlStateNormal];
+
+
+    self.activityIndicatorImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"SpinningPlate"]];
+    
+    self.activityIndicatorImageView.frame = CGRectMake(60, 485, 100, 100);
+    self.activityIndicatorImageView.center = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);
+    [self.class rotateLayerInfinite:self.activityIndicatorImageView.layer]; ///HERE GOES NOTHING
+
+
+    xButton = [[UIButton alloc]initWithFrame:CGRectMake(self.frame.size.width/2 - 25, 485, 59, 59)];
+    xButton.center = CGPointMake(self.frame.size.width/2 - 50, self.frame.size.height/2 + CARD_HEIGHT/2 + 50);
     [xButton setImage:[UIImage imageNamed:@"xButton"] forState:UIControlStateNormal];
     [xButton addTarget:self action:@selector(swipeLeft) forControlEvents:UIControlEventTouchUpInside];
-    checkButton = [[UIButton alloc]initWithFrame:CGRectMake(200, 485, 59, 59)];
+    checkButton = [[UIButton alloc]initWithFrame:CGRectMake(self.frame.size.width/2 + 25, 485, 59, 59)];
+    checkButton.center = CGPointMake(self.frame.size.width/2 + 50, self.frame.size.height/2 + CARD_HEIGHT/2 + 50);
     [checkButton setImage:[UIImage imageNamed:@"checkButton"] forState:UIControlStateNormal];
     [checkButton addTarget:self action:@selector(swipeRight) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:menuButton];
     [self addSubview:messageButton];
     [self addSubview:xButton];
     [self addSubview:checkButton];
+    [self addSubview:self.activityIndicatorImageView];
 }
 
 #pragma mark - Card Customization
@@ -228,6 +244,19 @@ static const float CARD_WIDTH = 290; //%%% width of the draggable card
     }];
     [dragView leftClickAction];
 }
+
++ (void)rotateLayerInfinite:(CALayer *)layer
+{
+    CABasicAnimation *rotation;
+    rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+    rotation.fromValue = [NSNumber numberWithFloat:0];
+    rotation.toValue = [NSNumber numberWithFloat:(2 * M_PI)];
+    rotation.duration = 0.7f; // Speed
+    rotation.repeatCount = HUGE_VALF; // Repeat forever. Can be a finite number.
+    [layer removeAllAnimations];
+    [layer addAnimation:rotation forKey:@"Spin"];
+}
+
 
 
 

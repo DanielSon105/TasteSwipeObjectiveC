@@ -16,7 +16,7 @@
     NSLog(@"Init With Frame OverlayView Called");
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor clearColor];
         imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"noButton"]];
         [self addSubview:imageView];
     }
@@ -42,6 +42,8 @@
 {
     [super layoutSubviews];
     imageView.frame = CGRectMake(50, 50, 100, 100);
+
+    
 }
 
 /*

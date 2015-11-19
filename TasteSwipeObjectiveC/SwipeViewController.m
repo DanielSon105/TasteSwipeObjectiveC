@@ -11,6 +11,7 @@
 #import "NetworkClient.h"
 
 @interface SwipeViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
 
 @end
 
@@ -19,9 +20,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *arrayBlah = [NSArray new];
-    NetworkClient *nc = [NetworkClient new];
-    [nc saveGroceryListToCache:arrayBlah];
+//    NSArray *arrayBlah = [NSArray new];
+//    NetworkClient *nc = [NetworkClient new];
+//    [nc saveGroceryListToCache:arrayBlah];
+
+
 
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
 
@@ -29,6 +32,11 @@
     SwipedCardBackgroundView *swipedCardBackgroundView = [[SwipedCardBackgroundView alloc]initWithFrame:self.view.frame];
     [swipedCardBackgroundView getMealInfo:accessToken];
     [self.view addSubview:swipedCardBackgroundView];
+//    [self.view sendSubviewToBack:self.backgroundImageView];
+    [self.view insertSubview:self.backgroundImageView atIndex:0];
+//    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"foodbackgroundphoto4"]];
+//    self.view.contentMode = UIViewContentModeScaleAspectFill;
+//    [self.view sendSubviewToBack:self.backgroundImageView];
     NSLog(@"SwipedCardBackgroundView alloc init complete");
 }
 

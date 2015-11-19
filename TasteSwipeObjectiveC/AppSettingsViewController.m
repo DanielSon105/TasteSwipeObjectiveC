@@ -70,7 +70,8 @@
                         NSLog(@"%@", text);
                         NSLog(@"delete works");
 
-                        //set u
+                        [self performSegueWithIdentifier: @"LogOutToSignInSegue" sender:self];
+
                     });
 
                 } else {

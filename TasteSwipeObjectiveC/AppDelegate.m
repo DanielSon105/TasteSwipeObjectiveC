@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "NetworkClient.h"
 
 @interface AppDelegate ()
 
@@ -16,6 +17,19 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    NSString *token = [[NSUserDefaults standardUserDefaults] valueForKey:@"accessToken"];
+
+    NSString *controllerId = token ? @"mainNavigationController" : @"Login";
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initViewController = [storyboard instantiateViewControllerWithIdentifier:controllerId];
+
+    // always assumes token is valid - should probably check
+    if (token) {
+        [self.window setRootViewController:initViewController];
+    } else {
+        [(UINavigationController *)self.window.rootViewController pushViewController:initViewController animated:NO];
+    }
+
     // Override point for customization after application launch.
     return YES;
 }

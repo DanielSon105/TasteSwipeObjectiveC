@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SxG-qM-Arg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ch4-im-L3I">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -11,7 +11,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" id="BYZ-38-t0r" customClass="WelcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -461,7 +461,7 @@
         <!--Swipe View Controller-->
         <scene sceneID="ui3-Vk-ygn">
             <objects>
-                <viewController id="9l4-4u-KFU" customClass="SwipeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SwipeController" id="9l4-4u-KFU" customClass="SwipeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zyc-Be-f2H"/>
                         <viewControllerLayoutGuide type="bottom" id="FG8-ar-c3e"/>
@@ -586,12 +586,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OTF-bx-lkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1702.5" y="1826"/>
+            <point key="canvasLocation" x="1678.5" y="1953"/>
         </scene>
         <!--App Settings View Controller-->
         <scene sceneID="2hL-SV-Fbm">
             <objects>
-                <viewController id="xwu-xu-Egg" customClass="AppSettingsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tokenCheckNav" id="xwu-xu-Egg" customClass="AppSettingsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UFZ-dd-ztb"/>
                         <viewControllerLayoutGuide type="bottom" id="h44-u8-mk4"/>
@@ -625,6 +625,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="8N0-cY-Qhi" kind="show" identifier="LogOutToSignInSegue" id="z98-8l-I1W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55Q-db-MIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -2139,6 +2142,19 @@
             <point key="canvasLocation" x="4206" y="1103"/>
         </scene>
         <!--Navigation Controller-->
+        <scene sceneID="nhI-Ru-yq4">
+            <objects>
+                <navigationController id="ch4-im-L3I" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VIN-de-hNX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ekz-HD-Zfd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="25.5" y="1487"/>
+        </scene>
+        <!--Navigation Controller-->
         <scene sceneID="vCc-er-Sgb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PPI-5x-0bj" sceneMemberID="viewController">
@@ -2230,6 +2246,6 @@
         <image name="star" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j2a-fh-Zkm"/>
+        <segue reference="csl-Yu-hDZ"/>
     </inferredMetricsTieBreakers>
 </document>

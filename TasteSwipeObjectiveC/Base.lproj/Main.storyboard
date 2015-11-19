@@ -143,73 +143,223 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodbackgroundphoto2" translatesAutoresizingMaskIntoConstraints="NO" id="Pah-SA-crq">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cb8-Nh-kJx">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="225" id="FQJ-jm-1AM"/>
+                                    <constraint firstAttribute="width" constant="300" id="kF2-wo-6wS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="FQJ-jm-1AM"/>
+                                        <exclude reference="kF2-wo-6wS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="FQJ-jm-1AM"/>
+                                        <include reference="kF2-wo-6wS"/>
+                                    </mask>
+                                </variation>
+                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odD-Uf-Dm0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <animations/>
-                                <state key="normal" title="Sign Up"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="358" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6A2-br-P1F"/>
+                                    <constraint firstAttribute="width" constant="55" id="8d7-qO-84g"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6A2-br-P1F"/>
+                                        <exclude reference="8d7-qO-84g"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="6A2-br-P1F"/>
+                                        <include reference="8d7-qO-84g"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="onSignUpButtonTapped:" destination="XEY-8i-ksD" eventType="touchUpInside" id="Ldx-d6-TKR"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8I-5I-xAN">
-                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="121" y="219" width="157" height="30"/>
-                                </variation>
-                            </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9hz-8S-Wji">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="849-sH-J0D"/>
+                                    <constraint firstAttribute="width" constant="287" id="vyl-kr-ZKY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="121" y="265" width="157" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="849-sH-J0D"/>
+                                        <exclude reference="vyl-kr-ZKY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="849-sH-J0D"/>
+                                        <include reference="vyl-kr-ZKY"/>
+                                    </mask>
                                 </variation>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password Confirm" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="V2g-iO-U4T">
                                 <rect key="frame" x="-25" y="-30" width="97" height="30"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="3KO-bv-Xde"/>
+                                    <constraint firstAttribute="height" constant="30" id="4le-hb-pR0"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="121" y="310" width="157" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="3KO-bv-Xde"/>
+                                        <exclude reference="4le-hb-pR0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="3KO-bv-Xde"/>
+                                        <include reference="4le-hb-pR0"/>
+                                    </mask>
                                 </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kqr-aN-C7F">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Back to Sign In"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="155" y="401" width="102" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Oqa-dy-P9j"/>
+                                    <constraint firstAttribute="width" constant="102" id="dwS-Wf-Nu1"/>
+                                </constraints>
+                                <state key="normal" title="Back to Sign In">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Oqa-dy-P9j"/>
+                                        <exclude reference="dwS-Wf-Nu1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Oqa-dy-P9j"/>
+                                        <include reference="dwS-Wf-Nu1"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <segue destination="5W4-dy-bXY" kind="unwind" identifier="unwindToWelcome" unwindAction="unwindToWelcomeVC:" id="Szk-PX-6Ze"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="e8I-5I-xAN">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="KiY-J0-Gkl"/>
+                                    <constraint firstAttribute="height" constant="30" id="r98-h6-Rdx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="KiY-J0-Gkl"/>
+                                        <exclude reference="r98-h6-Rdx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="KiY-J0-Gkl"/>
+                                        <include reference="r98-h6-Rdx"/>
+                                    </mask>
+                                </variation>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cb8-Nh-kJx" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="08o-mK-JoM"/>
+                            <constraint firstItem="cb8-Nh-kJx" firstAttribute="centerY" secondItem="0nQ-aM-IzH" secondAttribute="centerY" id="3d9-Tn-gLG"/>
+                            <constraint firstItem="V2g-iO-U4T" firstAttribute="top" secondItem="9hz-8S-Wji" secondAttribute="bottom" constant="15" id="ImK-AM-NQ9"/>
+                            <constraint firstItem="odD-Uf-Dm0" firstAttribute="top" secondItem="V2g-iO-U4T" secondAttribute="bottom" constant="34" id="KLu-7H-y6Y"/>
+                            <constraint firstItem="9hz-8S-Wji" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="S5Z-FP-vTE"/>
+                            <constraint firstItem="e8I-5I-xAN" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="SvH-3Q-P8a"/>
+                            <constraint firstItem="cb8-Nh-kJx" firstAttribute="top" secondItem="e8I-5I-xAN" secondAttribute="bottom" constant="-47" id="ZdH-bJ-IXt"/>
+                            <constraint firstItem="Pah-SA-crq" firstAttribute="leading" secondItem="0nQ-aM-IzH" secondAttribute="leadingMargin" constant="-20" id="db4-cX-5Vz"/>
+                            <constraint firstItem="V2g-iO-U4T" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="gGe-Up-mho"/>
+                            <constraint firstItem="Pah-SA-crq" firstAttribute="top" secondItem="0nQ-aM-IzH" secondAttribute="topMargin" id="gZi-qU-hqS"/>
+                            <constraint firstItem="odD-Uf-Dm0" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="hMU-K4-Ynl"/>
+                            <constraint firstItem="Kqr-aN-C7F" firstAttribute="top" secondItem="odD-Uf-Dm0" secondAttribute="bottom" constant="-7" id="v2c-cO-BO7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pah-SA-crq" secondAttribute="trailing" constant="-20" id="wwg-O2-VD4"/>
+                            <constraint firstItem="9hz-8S-Wji" firstAttribute="top" secondItem="e8I-5I-xAN" secondAttribute="bottom" constant="16" id="xbS-tQ-A6P"/>
+                            <constraint firstItem="2Tx-jL-pVK" firstAttribute="top" secondItem="Pah-SA-crq" secondAttribute="bottom" id="xeP-ft-O0T"/>
+                            <constraint firstItem="Kqr-aN-C7F" firstAttribute="centerX" secondItem="0nQ-aM-IzH" secondAttribute="centerX" id="zos-Q2-dVQ"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="Pah-SA-crq"/>
+                                <exclude reference="cb8-Nh-kJx"/>
                                 <exclude reference="odD-Uf-Dm0"/>
-                                <exclude reference="e8I-5I-xAN"/>
                                 <exclude reference="9hz-8S-Wji"/>
                                 <exclude reference="V2g-iO-U4T"/>
                                 <exclude reference="Kqr-aN-C7F"/>
+                                <exclude reference="e8I-5I-xAN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="db4-cX-5Vz"/>
+                                <exclude reference="gZi-qU-hqS"/>
+                                <exclude reference="wwg-O2-VD4"/>
+                                <exclude reference="08o-mK-JoM"/>
+                                <exclude reference="3d9-Tn-gLG"/>
+                                <exclude reference="ZdH-bJ-IXt"/>
+                                <exclude reference="SvH-3Q-P8a"/>
+                                <exclude reference="S5Z-FP-vTE"/>
+                                <exclude reference="xbS-tQ-A6P"/>
+                                <exclude reference="ImK-AM-NQ9"/>
+                                <exclude reference="gGe-Up-mho"/>
+                                <exclude reference="KLu-7H-y6Y"/>
+                                <exclude reference="hMU-K4-Ynl"/>
+                                <exclude reference="v2c-cO-BO7"/>
+                                <exclude reference="zos-Q2-dVQ"/>
+                                <exclude reference="xeP-ft-O0T"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="Pah-SA-crq"/>
+                                <include reference="cb8-Nh-kJx"/>
                                 <include reference="odD-Uf-Dm0"/>
-                                <include reference="e8I-5I-xAN"/>
                                 <include reference="9hz-8S-Wji"/>
                                 <include reference="V2g-iO-U4T"/>
                                 <include reference="Kqr-aN-C7F"/>
+                                <include reference="e8I-5I-xAN"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="db4-cX-5Vz"/>
+                                <include reference="gZi-qU-hqS"/>
+                                <include reference="wwg-O2-VD4"/>
+                                <include reference="08o-mK-JoM"/>
+                                <include reference="3d9-Tn-gLG"/>
+                                <include reference="ZdH-bJ-IXt"/>
+                                <include reference="SvH-3Q-P8a"/>
+                                <include reference="S5Z-FP-vTE"/>
+                                <include reference="xbS-tQ-A6P"/>
+                                <include reference="ImK-AM-NQ9"/>
+                                <include reference="gGe-Up-mho"/>
+                                <include reference="KLu-7H-y6Y"/>
+                                <include reference="hMU-K4-Ynl"/>
+                                <include reference="v2c-cO-BO7"/>
+                                <include reference="zos-Q2-dVQ"/>
+                                <include reference="xeP-ft-O0T"/>
                             </mask>
                         </variation>
                     </view>
@@ -938,7 +1088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gK-Ue-H7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5079" y="1103"/>
+            <point key="canvasLocation" x="5079" y="1034"/>
         </scene>
         <!--Recipe Cooking View Controller-->
         <scene sceneID="5fO-4S-TAL">
@@ -1129,7 +1279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMV-ax-ssr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5800.5" y="1103"/>
+            <point key="canvasLocation" x="5872.5" y="1034"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="QJY-SS-bIa">
@@ -1324,7 +1474,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VE0-Jr-gXU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3258" y="1103"/>
+            <point key="canvasLocation" x="3258" y="1034"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="a3o-wa-zP1">
@@ -1609,7 +1759,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6a-ko-bXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4161" y="1103"/>
+            <point key="canvasLocation" x="4161" y="1034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vCc-er-Sgb">
@@ -1691,6 +1841,7 @@
     </scenes>
     <resources>
         <image name="foodbackgroundphoto1" width="2048" height="1368"/>
+        <image name="foodbackgroundphoto2" width="1080" height="720"/>
         <image name="foodbackgroundphoto5" width="2100" height="1500"/>
         <image name="foodbackgroundphoto6" width="1080" height="723"/>
         <image name="horizontal_line" width="25" height="25"/>

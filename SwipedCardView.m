@@ -38,7 +38,8 @@
 #pragma mark - Card Specific Information
 
         self.meal = [Meal new];
-        information = [[UILabel alloc]initWithFrame:CGRectMake(0, self.frame.size.height*.8, self.frame.size.width, 100)];
+        information = [[UILabel alloc]initWithFrame:CGRectMake(0, self.frame.size.height*.775, self.frame.size.width, 100)];
+        [information setFont:[UIFont systemFontOfSize:14]];
         information.text = @"no info given";
         [information setTextAlignment:NSTextAlignmentCenter];
         information.textColor = [UIColor blackColor];

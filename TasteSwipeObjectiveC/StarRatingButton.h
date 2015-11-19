@@ -12,4 +12,5 @@
 @interface StarRatingButton : UIButton
 @property NSInteger ratingNumber; // 1-5
 
+
 @end

@@ -9,6 +9,7 @@
 #import "MealDetailViewController.h"
 #import "ConsumableTableViewCell.h"
 #import "RecipeViewController.h"
+#import "StarRatingButton.h"
 
 @interface MealDetailViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -93,24 +94,13 @@
 - (IBAction)onTriedMealButtonTapped:(id)sender {
 }
 
-
-//-(NSURL *)documentsDirectory {
-//    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] firstObject];
-//
-//}
+//-(id)onRatingStarButtonTapped:(StarRatingButton *)sender {
+//    NSInteger *submittedRating = sender.ratingNumber;
+//    NSString *ratingString = [NSString stringWith:@"%lu",submittedRating];
 
 
-//-(void)save {
-//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
-//    [self.toTryListMeals writeToURL:pList atomically:YES];
-//    NSLog(@"%@", pList);
-//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-//    [userDefaults setObject:[NSDate date] forKey:@"LastWriteDate"];
-//}
-//
-//-(void)load {
-//    NSURL *pList = [[self documentsDirectory] URLByAppendingPathComponent:@"toTryListMeals.plist"];
-//    self.toTryListMeals = [NSMutableArray arrayWithContentsOfURL:pList];
+
+//    return ratingString;
 //}
 
 @end

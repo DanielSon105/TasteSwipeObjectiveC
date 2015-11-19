@@ -788,7 +788,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="16G-fY-rYx">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XQ7-pY-rwc">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foodbackgroundphoto4" translatesAutoresizingMaskIntoConstraints="NO" id="XQ7-pY-rwc">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         <animations/>
                                         <constraints>
@@ -889,8 +889,7 @@
                                         <exclude reference="z2d-m4-L3c"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="64" width="401" height="258"/>
+                                <variation key="widthClass=compact">
                                     <mask key="subviews">
                                         <include reference="XQ7-pY-rwc"/>
                                         <include reference="874-4H-0BV"/>
@@ -1030,9 +1029,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="1" y="330" width="399" height="270"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="6EL-Rx-cv1" id="iUV-wX-5vd"/>
                                     <outlet property="delegate" destination="6EL-Rx-cv1" id="WSA-zh-hxl"/>
@@ -1742,9 +1738,6 @@
                                                 <include reference="da1-Le-rXS"/>
                                             </mask>
                                         </variation>
-                                        <connections>
-                                            <segue destination="qSm-7B-fNN" kind="presentation" id="zn6-bE-ell"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -2349,6 +2342,7 @@
         <image name="doughnut_chart" width="25" height="25"/>
         <image name="foodbackgroundphoto1" width="2048" height="1368"/>
         <image name="foodbackgroundphoto2" width="1080" height="720"/>
+        <image name="foodbackgroundphoto4" width="2100" height="1500"/>
         <image name="foodbackgroundphoto5" width="2100" height="1500"/>
         <image name="foodbackgroundphoto6" width="1080" height="723"/>
         <image name="fork" width="25" height="25"/>

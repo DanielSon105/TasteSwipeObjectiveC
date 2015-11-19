@@ -118,6 +118,7 @@
     ToTryListTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ToTryListCell" forIndexPath:indexPath];
     cell.toTryListMeal = [self.toTryListMeals objectAtIndex:indexPath.row];
     cell.textLabel.text = cell.toTryListMeal.mealName;
+    cell.detailTextLabel.text = cell.toTryListMeal.mealDescription;
     cell.imageView.image = [UIImage imageWithData:[[NSData alloc] initWithContentsOfURL: [NSURL URLWithString:cell.toTryListMeal.mealImageURL]]];
     return cell;
 }

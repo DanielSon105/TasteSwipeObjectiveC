@@ -12,6 +12,7 @@
 #import "NetworkClient.h"
 #import "RecipeCookingViewController.h"
 #import "GroceryListItem.h"
+#import "MealDetailViewController.h"
 
 @interface RecipeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -34,6 +35,8 @@
     [super viewDidLoad];
 //    self.showRecipeButton.hidden = YES;
     self.networkClient = [NetworkClient new];
+
+    NSLog(@"%@", self.consumable);
 
     //Load the grocery list Plist on this view Controller...I think needs to be done on adding G-List though... moving it right now
 
@@ -164,6 +167,9 @@
 - (IBAction)onViewRecipeButtonTapped:(id)sender {
     [self performSegueWithIdentifier:@"RecipeToStepsSegue" sender:self];
 }
+- (IBAction)onBackButtonTapped:(id)sender {
+    [self performSegueWithIdentifier: @"RecipeToMealDetailSegue" sender:self];
+}
 
 #pragma mark - grocery list cache management
 
@@ -190,6 +196,10 @@
     if ([segue.identifier isEqual:@"RecipeToStepsSegue"]){
         UINavigationController *recipeStepsNavigationController = segue.destinationViewController;
         RecipeCookingViewController *rcvc = [recipeStepsNavigationController.childViewControllers objectAtIndex:0];
+    }
+    if ([segue.identifier isEqual:@"RecipeToMealDetailSegue"]){
+        MealDetailViewController *mdvc = segue.destinationViewController;
+        mdvc.meal = self.meal;
     }
 }
 

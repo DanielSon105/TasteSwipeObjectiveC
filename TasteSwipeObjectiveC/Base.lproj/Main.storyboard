@@ -774,6 +774,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-q5-Vsj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <animations/>
+                                <state key="normal" image="kitchen_filled"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="345" y="292" width="31" height="25"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onViewRecipeButtonTapped:" destination="6EL-Rx-cv1" eventType="touchUpInside" id="6qt-bS-4ys"/>
+                                </connections>
+                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="16G-fY-rYx">
                                 <rect key="frame" x="0.0" y="0.0" width="200" height="110"/>
                                 <subviews>
@@ -797,6 +808,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="874-4H-0BV">
                                         <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                         <animations/>
+                                        <color key="backgroundColor" red="0.80000001190000003" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -877,7 +889,8 @@
                                         <exclude reference="z2d-m4-L3c"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="64" width="401" height="258"/>
                                     <mask key="subviews">
                                         <include reference="XQ7-pY-rwc"/>
                                         <include reference="874-4H-0BV"/>
@@ -1017,22 +1030,14 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="1" y="330" width="399" height="270"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="6EL-Rx-cv1" id="iUV-wX-5vd"/>
                                     <outlet property="delegate" destination="6EL-Rx-cv1" id="WSA-zh-hxl"/>
                                 </connections>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YWe-q5-Vsj">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <animations/>
-                                <state key="normal" image="kitchen_filled"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="253" y="224" width="31" height="25"/>
-                                </variation>
-                                <connections>
-                                    <action selector="onViewRecipeButtonTapped:" destination="6EL-Rx-cv1" eventType="touchUpInside" id="6qt-bS-4ys"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1048,9 +1053,9 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="YWe-q5-Vsj"/>
                                 <exclude reference="16G-fY-rYx"/>
                                 <exclude reference="MAa-wG-af0"/>
-                                <exclude reference="YWe-q5-Vsj"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="LoX-hu-MkP"/>
@@ -1063,9 +1068,9 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
+                                <include reference="YWe-q5-Vsj"/>
                                 <include reference="16G-fY-rYx"/>
                                 <include reference="MAa-wG-af0"/>
-                                <include reference="YWe-q5-Vsj"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="LoX-hu-MkP"/>
@@ -1078,7 +1083,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="sDS-8t-res">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="68r-w8-2BI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="68r-w8-2BI">
+                            <connections>
+                                <action selector="onBackButtonTapped:" destination="6EL-Rx-cv1" id="V25-WU-sxB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Grocery List" id="HV0-kO-CAj">
                             <connections>
                                 <segue destination="tPF-5S-T68" kind="show" identifier="RecipeGroceryListSegue" id="qrh-uX-DbL"/>
@@ -1089,6 +1098,7 @@
                         <outlet property="ingredientsTableView" destination="MAa-wG-af0" id="sQ7-3G-uqg"/>
                         <outlet property="showRecipeButton" destination="YWe-q5-Vsj" id="QAl-8E-PV0"/>
                         <segue destination="7MO-YA-Rk3" kind="show" identifier="RecipeToStepsSegue" id="tnv-Gp-PWf"/>
+                        <segue destination="SxG-qM-Arg" kind="show" identifier="RecipeToMealDetailSegue" id="b3Q-TD-bNO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6gK-Ue-H7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2139,7 +2149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j6a-ko-bXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4206" y="1103"/>
+            <point key="canvasLocation" x="4233" y="1103"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nhI-Ru-yq4">
@@ -2190,7 +2200,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hEb-da-Gsx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5079" y="1826"/>
+            <point key="canvasLocation" x="5079" y="1903"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cie-Ib-uIJ">
@@ -2246,6 +2256,7 @@
         <image name="star" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="b3Q-TD-bNO"/>
         <segue reference="j2a-fh-Zkm"/>
     </inferredMetricsTieBreakers>
 </document>

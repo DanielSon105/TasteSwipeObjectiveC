@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "Consumable.h"
+#import "Meal.h"
 
 
 @interface RecipeViewController : UIViewController
 @property Consumable *consumable;
+@property Meal *meal;
 @property BOOL hasRecipeID;
 
 

@@ -1288,20 +1288,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hH3-VU-0e4">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <animations/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="44"/>
-                                </variation>
-                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="W9f-Q5-PvC">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="GroceryListItemTableViewCell" textLabel="9fD-dZ-4kL" detailTextLabel="aVm-9r-jMu" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="Fu3-N4-Zzl" customClass="GroceryListItemTableViewCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="GroceryListItemTableViewCell" textLabel="9fD-dZ-4kL" detailTextLabel="aVm-9r-jMu" rowHeight="100" style="IBUITableViewCellStyleSubtitle" id="Fu3-N4-Zzl" customClass="GroceryListItemTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fu3-N4-Zzl" id="AIZ-i6-6Js">
@@ -1332,49 +1324,159 @@
                                             <animations/>
                                         </tableViewCellContentView>
                                         <animations/>
-                                        <color key="backgroundColor" red="0.80000001192092896" green="1" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="108" width="400" height="313"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="tPF-5S-T68" id="xCn-Ku-DzF"/>
                                     <outlet property="delegate" destination="tPF-5S-T68" id="0eA-G5-B12"/>
                                 </connections>
                             </tableView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-PZ-3Qz">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y2e-c7-CxB">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="429" width="360" height="163"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Ingredient" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U5w-XQ-LoE">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="31" y="24" width="222" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unit of Measurement" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FSh-6f-0Uy">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="31" y="62" width="222" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Amount" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uPI-R2-abf">
+                                        <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="31" y="100" width="222" height="30"/>
+                                        </variation>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSJ-ci-0iJ">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="ADD"/>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="279" y="41" width="77" height="72"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onAddEditButtonTapped:" destination="tPF-5S-T68" eventType="touchUpInside" id="yQY-bE-hCf"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="153" id="XyI-Ug-W1U"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="U5w-XQ-LoE"/>
+                                        <exclude reference="FSh-6f-0Uy"/>
+                                        <exclude reference="uPI-R2-abf"/>
+                                        <exclude reference="VSJ-ci-0iJ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <exclude reference="XyI-Ug-W1U"/>
+                                    </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="NM1-Pk-iKp" kind="embed" id="ult-mK-eCp"/>
-                                </connections>
-                            </containerView>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="U5w-XQ-LoE"/>
+                                        <include reference="FSh-6f-0Uy"/>
+                                        <include reference="uPI-R2-abf"/>
+                                        <include reference="VSJ-ci-0iJ"/>
+                                    </mask>
+                                    <mask key="constraints">
+                                        <include reference="XyI-Ug-W1U"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="hH3-VU-0e4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OHi-OI-oZb"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="OHi-OI-oZb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="OHi-OI-oZb"/>
+                                    </mask>
+                                </variation>
+                            </searchBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="hH3-VU-0e4" firstAttribute="top" secondItem="lwd-zd-KQ3" secondAttribute="bottom" constant="44" id="0yt-CQ-5OI"/>
+                            <constraint firstItem="W9f-Q5-PvC" firstAttribute="top" secondItem="hH3-VU-0e4" secondAttribute="bottom" id="2XQ-Cm-jRu"/>
+                            <constraint firstItem="sTR-j5-2jA" firstAttribute="top" secondItem="Y2e-c7-CxB" secondAttribute="bottom" id="39w-x6-9PP"/>
+                            <constraint firstItem="Y2e-c7-CxB" firstAttribute="leading" secondItem="am7-kp-3pd" secondAttribute="leadingMargin" constant="-20" id="9y0-1R-BTG"/>
+                            <constraint firstItem="W9f-Q5-PvC" firstAttribute="leading" secondItem="am7-kp-3pd" secondAttribute="leadingMargin" constant="-20" id="LFu-3n-q5l"/>
+                            <constraint firstItem="hH3-VU-0e4" firstAttribute="leading" secondItem="am7-kp-3pd" secondAttribute="leadingMargin" constant="-20" id="SvT-sA-qLR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W9f-Q5-PvC" secondAttribute="trailing" constant="-20" id="cVK-Xb-hZS"/>
+                            <constraint firstItem="Y2e-c7-CxB" firstAttribute="top" secondItem="W9f-Q5-PvC" secondAttribute="bottom" constant="8" id="heX-bF-t9V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y2e-c7-CxB" secondAttribute="trailing" constant="-20" id="pWq-RC-6lI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hH3-VU-0e4" secondAttribute="trailing" constant="-20" id="rDa-oP-zsX"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="hH3-VU-0e4"/>
                                 <exclude reference="W9f-Q5-PvC"/>
-                                <exclude reference="iNj-PZ-3Qz"/>
+                                <exclude reference="Y2e-c7-CxB"/>
+                                <exclude reference="hH3-VU-0e4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0yt-CQ-5OI"/>
+                                <exclude reference="SvT-sA-qLR"/>
+                                <exclude reference="rDa-oP-zsX"/>
+                                <exclude reference="2XQ-Cm-jRu"/>
+                                <exclude reference="LFu-3n-q5l"/>
+                                <exclude reference="cVK-Xb-hZS"/>
+                                <exclude reference="9y0-1R-BTG"/>
+                                <exclude reference="heX-bF-t9V"/>
+                                <exclude reference="pWq-RC-6lI"/>
+                                <exclude reference="39w-x6-9PP"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="hH3-VU-0e4"/>
                                 <include reference="W9f-Q5-PvC"/>
-                                <include reference="iNj-PZ-3Qz"/>
+                                <include reference="Y2e-c7-CxB"/>
+                                <include reference="hH3-VU-0e4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0yt-CQ-5OI"/>
+                                <include reference="SvT-sA-qLR"/>
+                                <include reference="rDa-oP-zsX"/>
+                                <include reference="2XQ-Cm-jRu"/>
+                                <include reference="LFu-3n-q5l"/>
+                                <include reference="cVK-Xb-hZS"/>
+                                <include reference="9y0-1R-BTG"/>
+                                <include reference="heX-bF-t9V"/>
+                                <include reference="pWq-RC-6lI"/>
+                                <include reference="39w-x6-9PP"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Grocery List" id="n7g-qB-gCF">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="mjQ-cd-GnQ"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Grocery List" id="n7g-qB-gCF"/>
                     <connections>
+                        <outlet property="addOrEditButton" destination="VSJ-ci-0iJ" id="Ikg-f4-97M"/>
+                        <outlet property="amountTextField" destination="uPI-R2-abf" id="L7t-5l-s9w"/>
+                        <outlet property="ingredientTextField" destination="U5w-XQ-LoE" id="mO1-gZ-sz9"/>
                         <outlet property="tableView" destination="W9f-Q5-PvC" id="A8o-eD-u6K"/>
+                        <outlet property="unitOfMeasurementTextField" destination="FSh-6f-0Uy" id="2D3-Uq-6Vs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qMV-ax-ssr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1451,7 +1553,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwV-Lc-s0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7696.5" y="1103"/>
+            <point key="canvasLocation" x="6699" y="1268.5"/>
         </scene>
         <!--Meal Detail View Controller-->
         <scene sceneID="zLD-qy-EQP">
